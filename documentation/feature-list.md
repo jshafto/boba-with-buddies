@@ -33,5 +33,6 @@
 - Create an event page, which contains a form where they specify all of the event info. Clicking the submit button will create the event so that it appears on their dashboard, and in the list of events in that city.
 - Dashboard where users can view their personal details, along with a list of events they are attending, and a list of events they are hosting.
 
-Schema:
-![Schema](schema.png)
+Schema
+---------
+![Schema](../images/schema.png)
