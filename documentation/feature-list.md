@@ -6,7 +6,7 @@ As a registered user, I want to be able to log in.
 
 ### Goals
 #### Acceptance critera
-- [ ] User can visit the /login route and there's a form with email / password / nickname
+- [ ] User can visit the `/login` route and there's a form with email / password / nickname
 - [ ] After user enters a valid email and password they are redirected to the dashboard
 - [ ] If a user enters an invalid email / password, they receive a general message that there was a login error
 - [ ] If a user enters the wrong password, they receive a general message that there was a login error
@@ -20,11 +20,11 @@ As a visitor to the website, I should be able to view all of the cities where ev
 
 ### Goals
 #### Acceptance criteria
-- [ ] Visitors can view the /cities route to browse available events across the different cities
+- [ ] Visitors can view the `/cities` route to browse available events across the different cities
 - [ ] List of cities (as links or buttons) is present in a horizontal bar on the page
-- [ ] clicking a link to a city, displays a table of future events from that city below the list of cities (GET /cities/:id)
+- [ ] clicking a link to a city, displays a table of future events from that city below the list of cities (GET `/cities/:id`)
 - [ ] The table that appears will include the event name and event time
-- [ ] For each event, a button that takes you to the event details page for that event (GET /events/:id)
+- [ ] For each event, a button that takes you to the event details page for that event (GET `/events/:id`)
 
 #### Stretch goals
 - [ ] Include a description of each city
@@ -39,7 +39,7 @@ As a user I want to be able to RSVP to an event, so that I can keep track of eve
 
 ### Goals
 #### Acceptance criteria
-- [ ] Event detail page is located at /events/:id
+- [ ] Event detail page is located at `/events/:id`
 - [ ] Event detail page has all of details about an event in one place
     - the name
     - the date/time
@@ -60,7 +60,7 @@ As a user, I want to be able to create new events to host. I should be able to c
 
 ### Goals
 #### Acceptance criteria
-- [ ] Create event page at (/events/create) lets you create a new event
+- [ ] Create event page at (`/events/create`) lets you create a new event
 - Users must provide
     - [ ] an event name
     - [ ] a city (from a dropdown list that includes only the cities in our database)
@@ -74,13 +74,13 @@ As a user, I want to be able to create new events to host. I should be able to c
 As a user, I want to be able to view all my account details and all of my events (the ones I'm hosting, and the ones I'm attending) in one place.
 ### Goals
 #### Acceptance criteria
-- [ ] The /dashboard page would allow a user to view their account details and upcoming events
+- [ ] The `/dashboard` page would allow a user to view their account details and upcoming events
 - [ ] Dashboard greets user with nickname
 - [ ] Dashboard contains a column with a list of all events the user has RSVP’d to
 - [ ] Dashboard contains a column with a list of all events a user is hosting
-- [ ] Each event item in both columns includes a link to the event detail page (/events/:id)
-- [ ] Dashboard contains a button that says “Join an event” which takes the user to the /cities page
-- [ ] Dashboard contains a button that says “Host a new event” which takes a user to the /events/create page
+- [ ] Each event item in both columns includes a link to the event detail page (`/events/:id`)
+- [ ] Dashboard contains a button that says “Join an event” which takes the user to the `/cities` page
+- [ ] Dashboard contains a button that says “Host a new event” which takes a user to the `/events/create` page
 
 #### Stretch goals
 - [ ] Serves a random “inspirational” quote to user
@@ -112,11 +112,12 @@ As a user, I want to be able to view all my account details and all of my events
     - eventId (foreign key references Event.id)
 
 # Endpoints
-- /
-- /cities
-- /cities/:id
-- /dashboard
-- /events/:id
+- `/`
+- `/cities`
+- `/cities/:id`
+- `/dashboard`
+- `/events/:id`
+- `/events/create`
 
 # Schema:
 ![Schema](schema.png)
