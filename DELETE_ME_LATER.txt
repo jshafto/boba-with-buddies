@@ -1,6 +1,0 @@
-# notes about work done on database and concerns that arose.
-
-Environment variables may not be needed? Heroku might do that for us. Will need clarification.
-will route db files such as projects do for familiarity, but no env vars for now.
-
-    

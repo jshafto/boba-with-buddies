@@ -120,3 +120,7 @@ As a user, I want to be able to view all my account details and all of my events
 
 # Schema:
 ![Schema](./images/schema.png)
+
+
+
+
