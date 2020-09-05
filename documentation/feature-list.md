@@ -119,4 +119,8 @@ As a user, I want to be able to view all my account details and all of my events
 - /events/:id
 
 # Schema:
-![Schema](schema.png)
+![Schema](./images/schema.png)
+
+
+
+
