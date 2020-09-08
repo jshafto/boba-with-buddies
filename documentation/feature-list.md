@@ -20,11 +20,11 @@ As a visitor to the website, I should be able to view all of the cities where ev
 
 ### Goals
 #### Acceptance criteria
-- [ ] Visitors can view the `/cities` route to browse available events across the different cities
+- [ ] Visitors can view the `/boba-times` route to browse available events across the different cities
 - [ ] List of cities (as links or buttons) is present in a horizontal bar on the page
-- [ ] clicking a link to a city, displays a table of future events from that city below the list of cities (GET `/cities/:id`)
+- [ ] clicking a link to a city, displays a table of future events from that city below the list of cities
 - [ ] The table that appears will include the event name and event time
-- [ ] For each event, a button that takes you to the event details page for that event (GET `/events/:id`)
+- [ ] For each event, a button that takes you to the event details page for that event
 
 #### Stretch goals
 - [ ] Include a description of each city
@@ -112,12 +112,19 @@ As a user, I want to be able to view all my account details and all of my events
     - eventId (foreign key references Event.id)
 
 # Endpoints
-- `/`
-- `/cities`
-- `/cities/:id`
-- `/dashboard`
-- `/events/:id`
-- `/events/create`
+- pages
+    - `/` - homepage
+    - `/signin` - login form for registered users
+    - `/signup` - sign up page for new users
+    - `/boba-times` - page that lists cities and events
+    - `/dashboard` - user dashboard (requires account)
+- api endpoints
+    - GET `/api/cities`
+    - GET `/api/cities/:id`
+    - GET `/api/events/:id`
+    - POST `/api/events/`
+    - POST `/api/users` (creates new user account)
+    - POST `/api/users/token` (signs in existing user)
 
 # Schema:
 ![Schema](./images/schema.png)

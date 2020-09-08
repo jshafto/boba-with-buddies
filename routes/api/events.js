@@ -7,4 +7,7 @@ const { Event } = db;
 // GET /:id(\\d+)
 // returns an event with a given id
 
+// POST /
+// allows a user to create a new event (with themself as the host)
+
 module.exports = router;

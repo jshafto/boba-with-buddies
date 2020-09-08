@@ -7,6 +7,9 @@ const router = express.Router();
 
 // GET / route
 // this route returns all the cities in the database
-// including their associated events
+//
+
+// GET /:id(\\d+)
+// returns a given city's details and associated events
 
 module.exports = router;
