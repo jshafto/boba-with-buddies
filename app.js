@@ -13,7 +13,6 @@ const cookieParser = require('cookie-parser');
 
 const { getUserFromToken } = require("./routes/utils/auth");
 
-
 // middleware
 app.use(morgan('dev'));
 app.use(cookieParser());
