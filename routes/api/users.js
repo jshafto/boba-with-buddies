@@ -97,7 +97,8 @@ router.post(
 // include delete route that ends the session?
 // include GET /token route? this seems important
 
-// will also need routes for /:id(\\d+)/events and /:id(\\d+)/hosted
+// will also need routes for /:id(\\d+)/events and /:id(\\d+)/hosted?
 // so that users can view the events that they're attending and hosting from their dashboard
+
 
 module.exports = router;

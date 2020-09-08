@@ -1,6 +1,8 @@
 const { validationResult } = require('express-validator');
 
 
+// note: if comparing to soon mi's twitter lite, she implemented this same function
+// and called it routeHandler
 const asyncHandler = handler => (req, res, next) => handler(req, res, next).catch(next);
 
 
