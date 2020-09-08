@@ -13,12 +13,19 @@ const cookieParser = require('cookie-parser');
 
 const { getUserFromToken } = require("./routes/utils/auth");
 
+const indexRouter = require('./routes/index');
+const mapRouter = require('./routes/map')
+app.set('view engine', 'pug');
 
 // middleware
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use("/public", express.static('public'));
+app.use(indexRouter)
+
 
 // check if a token is stored, and if so,
 // add a user object as part of the request
@@ -36,6 +43,7 @@ app.use(async (req, res, next) => {
 app.use("/public", express.static('public'));
 app.use('/api', apiRouter)
 app.use('/', pagesRouter)
+app.use("/map", mapRouter)
 
 // app.use((req, res, next) => {
 //     res.render('error-page');

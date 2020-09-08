@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       //! ES6 syntax has its differences will need review
-
+      
       Event.belongsTo(models.User, {foreignKey: "hostId"})
       Event.belongsTo(models.City, {foreignKey: "cityId"})
       //! Events belongs to Users in Two ways
-      Event.belongsToMany(models.User, {through: "Rsvps"})
+      // Events.belongsToMany(models.User, {through: "Rsvps"})
     }
   };
   Event.init({
