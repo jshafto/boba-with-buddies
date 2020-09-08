@@ -94,10 +94,24 @@ router.post(
 );
 
 
-// include delete route that ends the session?
+// delete route that ends the session
+router.delete('/session', asyncHandler(async(req,res) => {
+    res.clearCookie('token');
+    res.json({ message: 'success' });
+  }));
 
-
-// include GET /token route? this seems important
+//  GET /token route
+router.get('/token', asyncHandler(async (req, res, next) => {
+    if (req.user) {
+      return res.json({
+        id: req.user.id,
+        username: req.user.username
+      });
+    }
+    const err = new Error('Invalid token');
+    err.status = 401;
+    next(err);
+  }));
 
 // will also need routes for /:id(\\d+)/events and /:id(\\d+)/hosted?
 // so that users can view the events that they're attending and hosting from their dashboard
@@ -116,6 +130,8 @@ router.get('/:id(\\d+)/hosted', asyncHandler(async (req, res) => {
     res.json(hostedEvents)
 }))
 
+
+// returns all events that a user has rsvp'd to
 router.get('/:id(\\d+)/events', asyncHandler(async (req, res) => {
     const id = req.params.id;
     const user = await User.findByPk(id,

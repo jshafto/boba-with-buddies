@@ -16,12 +16,23 @@ router.get('/', (req, res) => {
 })
 
 // '/signin' route
-// router.get('/signin', (req, res) => {
-
-// })
+router.get('/signin', csrfProtection, (req, res) => {
+    if (req.user) {
+        res.redirect('/dashboard');
+        return;
+    }
+    res.render('signin', { csrf: req.csrfToken() })
+})
 
 
 // '/signup' route
+router.get('/signup', csrfProtection, (req, res) => {
+    if (req.user) {
+        res.redirect('/dashboard');
+        return;
+    }
+    res.render('signup', { csrf: req.csrfToken() })
+})
 
 
 // '/boba-times' route
@@ -30,8 +41,14 @@ router.get('/', (req, res) => {
 
 
 // '/dashboard' route
-// this route should be protected
-// redirects to the login page if user isn't signed in
+// redirects to the signin page if user isn't signed in
+router.get('/dashboard', csrfProtection, (req, res) => {
+    if (!req.user) {
+      res.redirect("/signin");
+      return;
+    }
+    res.render('dashboard', { nickname: req.user.nickname, csrf: req.csrfToken() });
+  });
 
 
 // '*' route
