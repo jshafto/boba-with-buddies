@@ -1,5 +1,5 @@
 const express = require('express');
-const { key } = require("../config/index").googleMaps
+const { key } = require("../../config/index").googleMaps
 const router = express.Router();
 
 router.get("/", (req, res) => {
@@ -11,6 +11,8 @@ router.get("/", (req, res) => {
         zoom: 10
     }
     res.render("map", options)
+    // realized we are doing backend apis will need to rework this later.
+    // res.json()
 });
 
 
