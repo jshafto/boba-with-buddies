@@ -2,7 +2,6 @@
 const {
   Model
 } = require('sequelize');
-const { Events } = require('pg');
 module.exports = (sequelize, DataTypes) => {
   class Event extends Model {
     /**
@@ -12,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       //! ES6 syntax has its differences will need review
-      
-      Event.belongsTo(User, {foreignKey: "hostId"})
-      Event.belongsTo(City, {foreignKey: "cityId"})
+
+      Event.belongsTo(models.User, {foreignKey: "hostId"})
+      Event.belongsTo(models.City, {foreignKey: "cityId"})
       //! Events belongs to Users in Two ways
-      Events.belongsToMany(User, {through: "Rsvps"})
+      Event.belongsToMany(models.User, {through: "Rsvps"})
     }
   };
   Event.init({
