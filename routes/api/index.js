@@ -6,11 +6,15 @@ const { ValidationError } = require("sequelize");
 
 const usersRouter = require('./users');
 const eventsRouter = require('./events');
-// include all api routers here
+const mapRouter = require("./maps")
+const citiesRouter = require("./cities")
+
 
 router.use('/users', usersRouter)
 router.use('/events', eventsRouter)
-// use all api routers here
+router.use('/maps', mapRouter)
+router.use('/cities', citiesRouter)
+
 
 
 // handle validation errors
