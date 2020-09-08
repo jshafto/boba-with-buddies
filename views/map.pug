@@ -13,7 +13,7 @@ block content
 
   script.
     var map;
-    var superchargers = [
+    var locations = [
       {
         location: 'Fremont',
         latitude: 37.49267,
@@ -47,7 +47,7 @@ block content
         zoom: 8
       });
 
-      superchargers.forEach(function(sc) {
+      locations.forEach(function(sc) {
         var marker = new google.maps.Marker({
           position: new google.maps.LatLng(sc.latitude, sc.longitude),
         //-   icon: '../documentation/images/Coffee_5.png', 
