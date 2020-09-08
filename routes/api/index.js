@@ -5,9 +5,11 @@ const { environment } = require('../../config');
 const { ValidationError } = require("sequelize");
 
 const usersRouter = require('./users');
+const eventsRouter = require('./events');
 // include all api routers here
 
 router.use('/users', usersRouter)
+router.use('/events', eventsRouter)
 // use all api routers here
 
 
