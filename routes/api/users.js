@@ -13,7 +13,7 @@ const { expiresIn } = require('../../config').jwtConfig;
 
 // import
 const db = require('../../db/models');
-const { User } = db;
+const { User, Event } = db;
 
 // define validations
     // check that nickname exists
@@ -95,9 +95,41 @@ router.post(
 
 
 // include delete route that ends the session?
+
+
 // include GET /token route? this seems important
 
-// will also need routes for /:id(\\d+)/events and /:id(\\d+)/hosted
+// will also need routes for /:id(\\d+)/events and /:id(\\d+)/hosted?
 // so that users can view the events that they're attending and hosting from their dashboard
+router.get('/:id(\\d+)/hosted', asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const user = await User.findByPk(id,
+        {
+        include: [{
+            model: Event,
+            as: 'hostedEvents'
+            // attributes: [] // possibly just for specific attributes?
+        }]
+    }
+    );
+    const {hostedEvents} = user;
+    res.json(hostedEvents)
+}))
+
+router.get('/:id(\\d+)/events', asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const user = await User.findByPk(id,
+        {
+        include: [{
+            model: Event,
+            // attributes: [] // possibly just for specific attributes?
+        }]
+    }
+    );
+    const {Events} = user;
+    res.json(Events);
+}))
+
+
 
 module.exports = router;
