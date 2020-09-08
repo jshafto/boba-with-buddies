@@ -35,7 +35,7 @@ const getUserToken = (user) => {
 // these seem like they address the same goal— so i used soon mi's convention
 
 
-exports.getUserFromToken = async (token) => {
+const getUserFromToken = async (token) => {
     try {
       const payload = jwt.verify(
         token,
@@ -47,4 +47,4 @@ exports.getUserFromToken = async (token) => {
     }
   }
 
-module.exports = { getUserToken};
+module.exports = { getUserToken, getUserFromToken};

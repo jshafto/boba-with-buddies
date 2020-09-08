@@ -24,7 +24,7 @@ const validateNickname =
     // check that password exists
     // could add more stringent requirements on username/password
 const validateEmailAndPassword = [
-    check("email")
+    check("emailAddress")
         .exists({ checkFalsy: true })
         .isEmail()
         .withMessage("Please provide a valid email."),
@@ -43,14 +43,14 @@ router.post(
     handleValidationErrors,
     asyncHandler(async (req, res) => {
         const {
-            username,
-            email,
+            nickname,
+            emailAddress,
             password
         } = req.body;
 
 
         const hashedPassword = await bcrypt.hash(password, 10);
-        const user = await User.create({ username, email, hashedPassword });
+        const user = await User.create({ nickname, emailAddress, hashedPassword });
         const token = getUserToken(user);
         res.cookie("token", token, { maxAge: expiresIn * 1000 }); // maxAge in milliseconds
         res.status(201).json({
@@ -67,10 +67,10 @@ router.post(
     validateEmailAndPassword,
     handleValidationErrors,
     asyncHandler(async (req, res, next) => {
-        const { email, password } = req.body;
+        const { emailAddress, password } = req.body;
         const user = await User.findOne({
             where: {
-                email,
+                emailAddress,
             },
         });
 
