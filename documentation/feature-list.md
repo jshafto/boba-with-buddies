@@ -78,9 +78,9 @@ As a user, I want to be able to view all my account details and all of my events
 - [ ] Dashboard greets user with nickname
 - [ ] Dashboard contains a column with a list of all events the user has RSVP’d to
 - [ ] Dashboard contains a column with a list of all events a user is hosting
-- [ ] Each event item in both columns includes a link to the event detail page (`/events/:id`)
-- [ ] Dashboard contains a button that says “Join an event” which takes the user to the `/cities` page
-- [ ] Dashboard contains a button that says “Host a new event” which takes a user to the `/events/create` page
+- [ ] Each event item in both columns includes a link to the event detail page
+- [ ] Dashboard contains a button that says “Join an event” which takes the user to the `/boba-times` page
+- [ ] Dashboard contains a button that says “Host a new event” which takes a user to the `/hosting` page
 
 #### Stretch goals
 - [ ] Serves a random “inspirational” quote to user
@@ -118,11 +118,13 @@ As a user, I want to be able to view all my account details and all of my events
     - `/signup` - sign up page for new users
     - `/boba-times` - page that lists cities and events
     - `/dashboard` - user dashboard (requires account)
+    - `/hosting` -
 - api endpoints
     - GET `/api/cities`
     - GET `/api/cities/:id`
     - GET `/api/events/:id`
-    - POST `/api/events/`
+    - POST `/api/events/` (creates a new event with user as host)
+    - POST `/api ???` (to add an rsvp between a given user and event—not sure of the conventions for adding a line in a join table)
     - POST `/api/users` (creates new user account)
     - POST `/api/users/token` (signs in existing user)
 
