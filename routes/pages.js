@@ -35,9 +35,9 @@ router.get('/signup', csrfProtection, (req, res) => {
 })
 
 
-// '/boba-times' route
+// '/boba-times' route - city
 
-// '/events/:id'
+// '/boba-times/:id route - city detail page
 
 
 // '/dashboard' route
