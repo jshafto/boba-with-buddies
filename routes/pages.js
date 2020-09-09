@@ -40,7 +40,6 @@ router.get('/boba-times', (req, res) => {
     res.render('boba-times', {jumpHeader: "Jump to Your city's Boba Times", events: "Events in your city!"})
 })
 
-<<<<<<< HEAD
 // '/boba-times/:id'
 router.get('/boba-times/:id(\\d+)', (req, res) => {
     res.render("events", {} )
@@ -50,20 +49,17 @@ router.get('/boba-times/:id(\\d+)', (req, res) => {
 router.get('/boba-times/events', (req, res) => {
     res.render('all-events', {})
 })
-=======
-// '/boba-times/:id route - city detail page
->>>>>>> master
 
 
 // '/dashboard' route
 // redirects to the signin page if user isn't signed in
 router.get('/dashboard', csrfProtection, (req, res) => {
     if (!req.user) {
-      res.redirect("/signin");
-      return;
+        res.redirect("/signin");
+        return;
     }
     res.render('dashboard', { nickname: req.user.nickname, csrf: req.csrfToken() });
-  });
+    });
 
 
 // '*' route
