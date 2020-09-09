@@ -1,4 +1,18 @@
 extends layout.pug
 
+include include/auth-input.pug
+
+append head
+  script(src="/public/js/signup.js" type="module" defer)
+
 block content
-    h1 Sign up
+  form#signup-form
+    h1 Join us for bubble tea sometime.
+    h2 It's nice to meet you.
+    #errors-container
+    input(type="hidden" name="_csrf" value=csrf)
+    +authInput("text", "nickname", "What should we call you?")
+    +authInput("text", "emailAddress", "Email Address")
+    +authInput("password", "password", "Password")
+    button(type="submit") Let's get bubble tea
+    a.link-to-other-form(href="/signin") Have you been here before? No need to introduce yourself again. Sign in here.
