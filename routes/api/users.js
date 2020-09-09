@@ -17,17 +17,21 @@ const { User, Event } = db;
 
 // define validations
     // check that nickname exists
-const validateNickname =
-    check("nickname")
+const validateEmail =
+    check("emailAddress")
         .exists({ checkFalsy: true })
     // check that email exists
     // check that password exists
     // could add more stringent requirements on username/password
-const validateEmailAndPassword = [
+const validateAuthFields = [
     check("emailAddress")
         .exists({ checkFalsy: true })
+        .withMessage("You need to include an email address where we can reach you.")
         .isEmail()
-        .withMessage("Please provide a valid email."),
+        .withMessage("That's not a valid email address—try again."),
+    check("nickname")
+        .exists({ checkFalsy: true })
+        .withMessage("You need to choose a nickname!"),
     check("password")
         .exists({ checkFalsy: true })
         .withMessage("Please provide a password."),
@@ -38,8 +42,7 @@ const validateEmailAndPassword = [
 router.post(
     "/",
     csrfProtection,
-    validateNickname,
-    validateEmailAndPassword,
+    validateAuthFields,
     handleValidationErrors,
     asyncHandler(async (req, res) => {
         const {
@@ -64,7 +67,7 @@ router.post(
 router.post(
     "/token",
     csrfProtection,
-    validateEmailAndPassword,
+    validateEmail,
     handleValidationErrors,
     asyncHandler(async (req, res, next) => {
         const { emailAddress, password } = req.body;
