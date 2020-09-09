@@ -1,0 +1,8 @@
+extends layout.pug
+append head 
+    script(async defer src="/public/js/cities.js" type="module")
+block content
+    h3= jumpHeader
+        #cities
+    ul= events
+        #events

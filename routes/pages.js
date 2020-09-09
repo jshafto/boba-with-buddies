@@ -35,7 +35,10 @@ router.get('/signup', csrfProtection, (req, res) => {
 })
 
 
-// '/boba-times' route - city
+// '/boba-times' route
+router.get('/boba-times', (req, res) => {
+    res.render('boba-times', {jumpHeader: "Jump to Your city's Boba Times", events: "Events in your city!"})
+})
 
 // '/boba-times/:id route - city detail page
 
