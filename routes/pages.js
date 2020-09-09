@@ -40,7 +40,7 @@ router.get('/boba-times', (req, res) => {
     res.render('boba-times', {jumpHeader: "Jump to Your city's Boba Times", events: "Events in your city!"})
 })
 
-// '/boba-times/:id'
+// '/boba-times/:id route - city detail page
 
 
 // '/dashboard' route
