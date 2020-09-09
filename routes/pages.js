@@ -37,18 +37,13 @@ router.get('/signup', csrfProtection, (req, res) => {
 
 // '/boba-times' route
 router.get('/boba-times', (req, res) => {
-    res.render('boba-times', {jumpHeader: "Jump to Your city's Boba Times", events: "Events in your city!"})
+    res.render('boba-times', {})
 })
 
 // '/boba-times/:id'
-router.get('/boba-times/:id(\\d+)', (req, res) => {
-    res.render("events", {} )
-})
+
 
 // '/boba-times/events
-router.get('/boba-times/events', (req, res) => {
-    res.render('all-events', {})
-})
 
 
 // '/dashboard' route

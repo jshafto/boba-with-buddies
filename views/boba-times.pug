@@ -2,9 +2,8 @@ extends layout.pug
 append head 
     script(async defer src='/public/js/cities.js' type='module')
 block content
-    h3= jumpHeader
-    ul
-        li: a(href="/boba-times/events") All Events
-        #cities
-    block events
+    h1 Upcoming Boba Times
+    h3 Jump to Your city's Boba Times
+    .cities
+    .events
         
