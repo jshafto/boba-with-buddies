@@ -69,8 +69,8 @@ function getEventsHTML(city){
                     <div>Host: ${hostName}</div>
                     <div>Location: ${address}</div>
                     <div>Number of Attendees: ${numAttendees}</div>
-        <button class="rsvpButton" id="rvspButton-${id}">Check it out!</button>
-        </div>`
+        <a href='/boba-times/${id}'><button class="rsvpButton" id="rvspButton-${id}">Check it out!</button>
+        </div></a>`
     })
     html += '</div>'
 
