@@ -9,11 +9,11 @@ const getCities = async () => {
 const createCityLi = async (city) => {
     const res = await fetch(`/api/cities/${city.id}`)
     const cityDetails = await res.json()
-    return `<button id="${city.id}">
-                    <div class="TBD">
+    return `<li>
+                <a href="/boba-times/${city.id}" id='${city.id}'>
                     ${city.name}
-                    </div>
-                </button>`;
+                </a>
+            </li>`;
     }
 
 
@@ -29,3 +29,14 @@ const populateCities = async () => {
 }
 
 populateCities()
+
+document.addEventListener('click', async (e) => {
+    const id = parseInt(e.target.id, 10)
+    if(id){
+        const res = await fetch(`/api/cities/${id}/events`)
+        const events = await res.json()
+        console.log(events)
+        document.getElementById('events')   
+    }
+})
+

@@ -5,7 +5,7 @@
 GET http://localhost:8000/api/cities
 ###
 
-GET http://localhost:8000/api/cities/2
+GET http://localhost:8000/api/cities/1
 
 
 

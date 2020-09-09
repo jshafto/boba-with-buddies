@@ -41,6 +41,14 @@ router.get('/boba-times', (req, res) => {
 })
 
 // '/boba-times/:id'
+router.get('/boba-times/:id(\\d+)', (req, res) => {
+    res.render("events", {} )
+})
+
+// '/boba-times/events
+router.get('/boba-times/events', (req, res) => {
+    res.render('all-events', {})
+})
 
 
 // '/dashboard' route
