@@ -1,4 +1,7 @@
 extends layout.pug
 
 block content
-    h1 Welcome, #{nickname}
+    div#parent
+        include include/header.pug
+        h1 Welcome, #{nickname}
+        include include/footer.pug
