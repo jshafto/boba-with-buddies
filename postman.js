@@ -8,10 +8,18 @@ GET http://localhost:8000/api/cities
 GET http://localhost:8000/api/cities/1
 
 
+###
 
+POST http://localhost:8000/api/rsvps
+content-type: application/json
 
+{
+    "userId": "5",
+    "eventId": "3"
+}
 
-
+###
+DELETE http://localhost:8000/api/rsvps/13
 
 
 
