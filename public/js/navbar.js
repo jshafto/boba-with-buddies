@@ -27,7 +27,7 @@ if (navWrapper) {
     navWrapper.innerHTML = `<a class="header-link" href="/boba-times">BOBA TIMES</a>
     <a class="header-link" href="/hosting">HOSTING</a>
     <a class="header-link" href="/dashboard">DASHBOARD</a>
-    <button id="signout">SIGN OUT</button>"
+    <button id="signout">SIGN OUT</button>
     `
     const signoutButton = document.getElementById("signout");
     signoutButton.addEventListener("click", async (e) => {
@@ -46,7 +46,7 @@ if (navWrapper) {
     <a class="header-link" href="/login">SIGN IN</a>
     <button id="signup">
     <a href="/signup">SIGN UP</a>
-    </button>"
+    </button>
     `;
   }
 }
