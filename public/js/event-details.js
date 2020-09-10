@@ -63,9 +63,9 @@ const populateEventsList = async () => {
         <div class="rsvp-container">
             <div class="event-header">
                 <div class="event-image">
-                    <img src="/public/js/coffee_6.png">
+                    <img src="/public/images/coffee_6.png">
                 </div>
-                JOIN ${hostName} FOR BOBA
+                <button class='event__button' id='${event.id}'>JOIN ${hostName} FOR BOBA</button>
             </div>
             <div class="event-body">
                 <p> &#128197: ${dateString}</p>
@@ -81,11 +81,33 @@ const populateEventsList = async () => {
     `;
     eventsList.innerHTML = eventLi;
 
-    // temporarily console logging
-    if (getCookieValue('token')) {
-        console.log(getUser())
-    }
-
 }
 
 populateEventsList();
+
+
+document.addEventListener('click', async (e) => {
+    if(e.target.classList.contains('event__button')){
+        const eventId = e.target.id
+        const userId = getUser().data.id
+        const body = {eventId, userId}
+        const newEvent = await fetch('/api/rsvps/', {
+            method: "POST",
+            body: JSON.stringify(body),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        const data = await newEvent.json();
+        if (!newEvent.ok) {
+            const { message } = data;
+            const errorsContainer = document.querySelector('#errors-container');
+            errorsContainer.innerHTML = message;
+            return;
+        }
+        console.log(newEvent)
+        window.location.href = '/boba-times';
+        return;
+    };
+    window.location.href = '/signup'
+});
