@@ -125,7 +125,7 @@ As a user, I want to be able to view all my account details and all of my events
 # Endpoints
 - pages
     - `/` - homepage
-    - `/signin` - login form for registered users
+    - `/login` - login form for registered users
     - `/signup` - sign up page for new users
     - `/boba-times` - page that lists cities and events
     - `/boba-times/:id` - event detail page
