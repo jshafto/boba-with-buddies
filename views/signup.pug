@@ -1,0 +1,41 @@
+extends layout.pug
+
+append head
+  link(rel="stylesheet" href="/public/css/auth.css")
+//-   script(src="/public/js/signup.js" type="module" defer)
+
+block content
+  div#parent
+    div#header
+      div.logo
+        a(href="/") Boba With Buddies
+      div.wrapper-nav
+        a(class='header-link' href='/boba-times') BOBA TIMES
+        a(class='header-link' href='https://medium.com/tea-with-strangers/apply-to-be-a-tea-with-strangers-host-9ca06937fbd7') HOSTING
+        button#signup
+          a(href='/signup') SIGN UP
+    div#form-container
+      form#login-form
+        h1 Join for boba time
+        h2 Thousands of friends across the world have sat together for conversations. Create an account and you'll be on your way to join the community.
+        ul#errors-container
+        input(type="hidden" name="_csrf" value=csrf)
+        input.form-input(type='email' name='email' placeholder='Email address' required)
+        input.form-input(type="text" name="username" placeholder='First name (or nickname)' required)
+        input.form-input(type='password' name='password' placeholder='Password' required)
+        button(type='submit') LET'S GET BOBA
+        div.existing-account
+          a.link-to-other-form(href="/signin") If you've already done this before, click here to log in
+    div#footer
+      div#footer-container
+        div#footer-links
+          div#about-footer About
+          div#hosting-footer Hosting
+          div#times-footer Boba Times
+          div#facebook-footer Facebook
+          div#twitter-footer Twitter
+          div#termsOfService-footer Terms of Service
+          div#privacyPolicy-footer Privacy Policy
+        div#footer-ethos
+          p Tea With Strangers is all about making our cities feel more like neighborhoods. We're more "connected" than ever before, but we're also more alone. And all we want to do is bring people together because, well, the world is better that way.
+          p We're not doing anything groundbreaking. We're creating something that would've been incredibly unnecessary 20 years ago. But while we get busier, it's easy to forget the value of a conversation for no reason. A conversation that's intentionally unintentional.

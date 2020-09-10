@@ -12,16 +12,21 @@ router.get('/', (req, res) => {
     // this route should show the main homepage
     // it should be the same whether or not the user
     // is signed in
-    res.render('home', { title: 'Boba with Buddies' })
+    res.render('welcome', { title: 'Boba with Buddies' })
 })
 
 // '/signin' route
-// router.get('/signin', (req, res) => {
+router.get('/signin', (req, res) => {
+    res.render('login', { title: 'Boba with Buddies' })
 
-// })
+})
 
 
 // '/signup' route
+router.get('/signup', (req, res) => {
+    res.render('signup', { title: 'Boba with Buddies' })
+
+})
 
 
 // '/boba-times' route
