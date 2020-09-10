@@ -1,17 +1,28 @@
 # Features
 
-## Login page
+## Sign in page
 ### User Story:
 As a registered user, I want to be able to log in.
 
 ### Goals
 #### Acceptance critera
-- [ ] User can visit the `/login` route and there's a form with email / password / nickname
-- [ ] After user enters a valid email and password they are redirected to the dashboard
-- [ ] If a user enters an invalid email / password, they receive a general message that there was a login error
-- [ ] If a user enters the wrong password, they receive a general message that there was a login error
-- [ ] Refreshing the page after login maintains the user session
+- [x] User can visit the `/signin` route and there's a form with email / password
+- [x] After user enters a valid email and password they are redirected to the dashboard
+- [x] If a user enters an invalid email / password, they receive a general message that there was a login error
+- [x] If a user enters the wrong password, they receive a general message that there was a login error
+- [x] Refreshing the page after login maintains the user session
 - [ ] User can log out to end the session
+
+## Sign up page
+### User Story:
+As a new user, I want to be able to create an account so that I can join and host events.
+
+### Goals
+#### Acceptance critera
+- [x] User can visit the `/signup` route and there's a form with nickname / email / password
+- [x] After user enters a valid nickname, a valid email address that isn't in the database already, and a valid password a new account is created for them
+- [x] If a user fails to provide any of the necessary information, or if the information they provide isn't valid, they will recieve a clear error message so that they can try again
+- [x] Once the new account has been created the user is redirected to their dashboard.
 
 
 ## View cities and events
@@ -20,9 +31,9 @@ As a visitor to the website, I should be able to view all of the cities where ev
 
 ### Goals
 #### Acceptance criteria
-- [ ] Visitors can view the `/boba-times` route to browse available events across the different cities
-- [ ] List of cities (as links or buttons) is present in a horizontal bar on the page
-- [ ] clicking a link to a city, displays a table of future events from that city below the list of cities
+- [x] Visitors can view the `/boba-times` route to browse the different cities where events are available
+- [x] List of cities (as links or buttons) is present in a horizontal bar on the page
+- [ ] Clicking a link to a city displays a collection of future events from that city below the list of cities
 - [ ] The table that appears will include the event name and event time
 - [ ] For each event, a button that takes you to the event details page for that event
 
@@ -39,9 +50,8 @@ As a user I want to be able to RSVP to an event, so that I can keep track of eve
 
 ### Goals
 #### Acceptance criteria
-- [ ] Event detail page is located at `/events/:id`
+- [ ] Event detail page is located at `/boba_times/:id`
 - [ ] Event detail page has all of details about an event in one place
-    - the name
     - the date/time
     - the location
     - the host
@@ -49,6 +59,7 @@ As a user I want to be able to RSVP to an event, so that I can keep track of eve
 - [ ] Page includes a button that will allow the user to RSVP to the event
 
 #### Stretch goals
+- [ ] Add an event name and description
 - [ ] Event detail page will indicate whether or not a user is already attending the event, and if so the join button will go away
 - [ ] A "Cancel RSVP" button will be available to users who are already attending the event
 - [ ] A "Cancel Event" button will be available to the host of the event
@@ -60,7 +71,7 @@ As a user, I want to be able to create new events to host. I should be able to c
 
 ### Goals
 #### Acceptance criteria
-- [ ] Create event page at (`/events/create`) lets you create a new event
+- [ ] Create event page lets you create a new event
 - Users must provide
     - [ ] an event name
     - [ ] a city (from a dropdown list that includes only the cities in our database)
@@ -75,7 +86,7 @@ As a user, I want to be able to view all my account details and all of my events
 ### Goals
 #### Acceptance criteria
 - [ ] The `/dashboard` page would allow a user to view their account details and upcoming events
-- [ ] Dashboard greets user with nickname
+- [x] Dashboard greets user with nickname
 - [ ] Dashboard contains a column with a list of all events the user has RSVP’d to
 - [ ] Dashboard contains a column with a list of all events a user is hosting
 - [ ] Each event item in both columns includes a link to the event detail page
@@ -117,14 +128,15 @@ As a user, I want to be able to view all my account details and all of my events
     - `/signin` - login form for registered users
     - `/signup` - sign up page for new users
     - `/boba-times` - page that lists cities and events
+    - `/boba-times/:id` - event detail page
     - `/dashboard` - user dashboard (requires account)
-    - `/hosting` -
+    - `/hosting` - form for creating a new event
 - api endpoints
     - GET `/api/cities`
     - GET `/api/cities/:id`
     - GET `/api/events/:id`
     - POST `/api/events/` (creates a new event with user as host)
-    - POST `/api ???` (to add an rsvp between a given user and event—not sure of the conventions for adding a line in a join table)
+    - POST `/api/rsvps/:id` (to add an rsvp between a given user and event)
     - POST `/api/users` (creates new user account)
     - POST `/api/users/token` (signs in existing user)
 

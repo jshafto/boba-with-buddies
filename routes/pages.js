@@ -36,9 +36,14 @@ router.get('/signup', csrfProtection, (req, res) => {
 
 
 // '/boba-times' route
+router.get('/boba-times', (req, res) => {
+    res.render('boba-times', {})
+})
+
+// '/boba-times/:id'
 
 // '/events/:id'
-router.get('/events/:id', csrfProtection, (req, res) => {
+router.get('/events/', csrfProtection, (req, res) => {
     // if (!req.user) {
     //     res.redirect("/signin");
     //     return;
@@ -46,15 +51,18 @@ router.get('/events/:id', csrfProtection, (req, res) => {
     res.render('event-show', { date: req.date });
 })
 
+// '/boba-times/events
+
+
 // '/dashboard' route
 // redirects to the signin page if user isn't signed in
 router.get('/dashboard', csrfProtection, (req, res) => {
     if (!req.user) {
-      res.redirect("/signin");
-      return;
+        res.redirect("/signin");
+        return;
     }
     res.render('dashboard', { nickname: req.user.nickname, csrf: req.csrfToken() });
-  });
+    });
 
 
 // '*' route
