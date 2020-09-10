@@ -34,8 +34,8 @@ As a visitor to the website, I should be able to view all of the cities where ev
 - [x] Visitors can view the `/boba-times` route to browse the different cities where events are available
 - [x] List of cities (as links or buttons) is present in a horizontal bar on the page
 - [x] Clicking a link to a city displays a collection of future events from that city below the list of cities
-- [x] The table that appears will include the event name and event time
-- [x] For each event, a button that takes you to the event details page for that event
+- [x] For each event, the host, address, and number of attendees appears
+- [x] Each event has button that takes you to the event details page for that event
 
 #### Stretch goals
 - [ ] Include a description of each city
