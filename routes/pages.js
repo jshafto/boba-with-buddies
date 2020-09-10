@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 })
 
 // '/signin' route
-router.get('/signin', (req, res) => {
+router.get('/login', (req, res) => {
     res.render('login', { title: 'Boba with Buddies' })
 
 })
