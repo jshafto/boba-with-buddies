@@ -6,12 +6,36 @@ append head
   script(src="/public/js/signin.js" type="module" defer)
 
 block content
-  form#signin-form
-    h1 Welcome back, Buddy!
-    h2 It must be time for bubble tea again.
-    #errors-container
-    input(type="hidden" name="_csrf" value=csrf)
-    +authInput("text", "emailAddress", "Email Address")
-    +authInput("password", "password", "Password")
-    button(type="submit") Sign in
-    a.link-to-other-form(href="/signup") Haven't been here before? Sign up and introduce yourself.
+  div#parent
+    div#header
+      div.logo
+        a(href="/") Boba With Buddies
+      div.wrapper-nav
+        a(class='header-link' href='/boba-times') BOBA TIMES
+        a(class='header-link' href='https://medium.com/tea-with-strangers/apply-to-be-a-tea-with-strangers-host-9ca06937fbd7') HOSTING
+        button#signup
+          a(href='/signup') SIGN UP
+    div#form-container
+      form#signin-form
+        h1 Welcome back, Buddy!
+        h2 It must be time for bubble tea again.
+        #errors-container
+        input(type="hidden" name="_csrf" value=csrf)
+        +authInput("text", "emailAddress", "Email Address")
+        +authInput("password", "password", "Password")
+        button(type="submit") Sign in
+        div.create-account
+          a.link-to-other-form(href="/signup") Haven't been here before? Sign up and introduce yourself.
+    div#footer
+      div#footer-container
+        div#footer-links
+          div#about-footer About
+          div#hosting-footer Hosting
+          div#times-footer Boba Times
+          div#facebook-footer Facebook
+          div#twitter-footer Twitter
+          div#termsOfService-footer Terms of Service
+          div#privacyPolicy-footer Privacy Policy
+      div#footer-ethos
+        p Tea With Strangers is all about making our cities feel more like neighborhoods. We're more "connected" than ever before, but we're also more alone. And all we want to do is bring people together because, well, the world is better that way.
+        p We're not doing anything groundbreaking. We're creating something that would've been incredibly unnecessary 20 years ago. But while we get busier, it's easy to forget the value of a conversation for no reason. A conversation that's intentionally unintentional.
