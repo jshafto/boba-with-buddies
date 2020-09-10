@@ -1,0 +1,14 @@
+extends layout.pug
+
+append head
+  link(rel="stylesheet" href="/public/css/welcome.css")
+
+block content
+  header
+    div#header
+        div.logo
+            text(id='medium') Boba With Buddies
+        div.wrapper-nav
+            button
+              a(href='/signup') SIGN UP
+            button(id='get-started-nav' class='get-started') Get started
