@@ -4,21 +4,20 @@ include include/auth-input.pug
 
 append head
   link(rel="stylesheet" href="/public/css/auth.css")
-  script(src="/public/js/signup.js" type="module" defer)
+  script(src="/public/js/signin.js" type="module" defer)
 
 block content
   div#parent
     include include/header.pug
     div#form-container
       form#login-form
-        h1 Join us for bubble tea sometime.
-        h2 It's nice to meet you.
+        h1 Hey buddy!
+        h2 It's good to have you back. Sign in here and sign up for your next boba time!
         ul#errors-container
         input(type="hidden" name="_csrf" value=csrf)
-        +authInput("text", "nickname", "What should we call you?")
         +authInput("text", "emailAddress", "Email Address")
         +authInput("password", "password", "Password")
-         button(type="submit") LET'S GET BOBA
-        div.existing-account
-          a.link-to-other-form(href="/login") Have you been here before? No need to introduce yourself again. Sign in here.
+        button(type="submit") Sign in
+        div.create-account
+          a.link-to-other-form(href="/signup") Haven't been here before? Sign up and introduce yourself.
     include include/footer.pug

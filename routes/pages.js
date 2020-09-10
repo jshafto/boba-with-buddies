@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const { key } = require("../config/index").googleMaps
 const csrfProtection = require("csurf")({ cookie: true });
 
 // this router only handles GET requests that return actual pages
@@ -12,32 +12,33 @@ router.get('/', (req, res) => {
     // this route should show the main homepage
     // it should be the same whether or not the user
     // is signed in
-    res.render('home', { title: 'Boba with Buddies' })
+    res.render('welcome', { title: 'Boba with Buddies' })
 })
 
 // '/signin' route
-router.get('/signin', csrfProtection, (req, res) => {
+router.get('/login', csrfProtection, (req, res) => {
     if (req.user) {
         res.redirect('/dashboard');
         return;
     }
-    res.render('signin', { csrf: req.csrfToken() })
+    res.render('login', { title: 'Boba with Buddies', csrf: req.csrfToken() })
 })
 
 
 // '/signup' route
+
 router.get('/signup', csrfProtection, (req, res) => {
     if (req.user) {
         res.redirect('/dashboard');
         return;
     }
-    res.render('signup', { csrf: req.csrfToken() })
+    res.render('signup', { title: 'Boba with Buddies',  csrf: req.csrfToken() })
 })
 
 
 // '/boba-times' route
 router.get('/boba-times', (req, res) => {
-    res.render('boba-times', {})
+    res.render('boba-times', {key})
 })
 
 // '/boba-times/:id'
@@ -71,6 +72,7 @@ router.get('/dashboard', csrfProtection, (req, res) => {
 router.get('*', (req, res) => {
     res.render('error-page');
 });
+
 
 
 
