@@ -1,9 +1,11 @@
 extends layout.pug
-append head 
+append head
     script(async defer src='/public/js/cities.js' type='module')
 block content
-    h1 Upcoming Boba Times
-    h3 Jump to Your city's Boba Times
-    .cities
-    .events
-        
+    div#parent
+      include include/header.pug
+      h1 Upcoming Boba Times
+      h3 Jump to Your city's Boba Times
+      .cities
+      .events
+      include include/footer.pug
