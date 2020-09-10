@@ -1,0 +1,20 @@
+ul{
+
+}
+.event {
+    border: 1px solid black;
+    margin: 100px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+.event-header{
+    font-size: xx-large;
+    color: palevioletred;
+}
+
+.event-header img {
+    width: 100px;
+    height: 100px;
+}

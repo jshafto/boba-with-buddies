@@ -13,7 +13,14 @@ const populateEventsList = async () => {
             <li>
                 <div class="event">
                     <div class="event-header">
-                        ${event.hostId} + ${event.address}
+                        <div class="event-image">
+                            <img src="public/js/tab-content-1.png">
+                        </div>
+                        Boba With host ${event.hostId}
+                    </div>
+                    <div class="event-body">
+                        <p> When: ${event.date}</p>
+                        <p> Where: ${event.address}</p>
                     </div>
                 </div>
 
