@@ -7,11 +7,13 @@ const { ValidationError } = require("sequelize");
 const usersRouter = require('./users');
 const eventsRouter = require('./events');
 const citiesRouter = require("./cities")
+const rsvpRouter = require('./rsvps')
 
 
 router.use('/users', usersRouter)
 router.use('/events', eventsRouter)
 router.use('/cities', citiesRouter)
+router.use('/rsvps', rsvpRouter)
 
 
 
