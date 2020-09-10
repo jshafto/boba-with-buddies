@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const { key } = require("../config/index").googleMaps
 const csrfProtection = require("csurf")({ cookie: true });
+const { asyncHandler } = require('./utils')
+
 
 // this router only handles GET requests that return actual pages
 // on the site
@@ -44,12 +46,11 @@ router.get('/boba-times', (req, res) => {
 // '/boba-times/:id'
 
 // '/events/:id'
-router.get('/events/', csrfProtection, (req, res) => {
-    // if (!req.user) {
-    //     res.redirect("/signin");
-    //     return;
-    // }
-    res.render('event-show', { date: req.date });
+router.get('/boba-times/:id(\\d+)', csrfProtection, (req, res) => {
+    const id = parseInt(req.params.id);
+    // const event = await event.findByPk(id);
+
+    res.render('events', { id });
 })
 
 // '/boba-times/events
