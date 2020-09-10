@@ -43,6 +43,14 @@ router.get('/boba-times', (req, res) => {
 
 // '/boba-times/:id'
 
+// '/events/:id'
+router.get('/events/', csrfProtection, (req, res) => {
+    // if (!req.user) {
+    //     res.redirect("/signin");
+    //     return;
+    // }
+    res.render('event-show', { date: req.date });
+})
 
 // '/boba-times/events
 
