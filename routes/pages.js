@@ -38,7 +38,13 @@ router.get('/signup', csrfProtection, (req, res) => {
 // '/boba-times' route
 
 // '/events/:id'
-
+router.get('/events/:id', csrfProtection, (req, res) => {
+    // if (!req.user) {
+    //     res.redirect("/signin");
+    //     return;
+    // }
+    res.render('event-show', { date: req.date });
+})
 
 // '/dashboard' route
 // redirects to the signin page if user isn't signed in
