@@ -1,0 +1,23 @@
+extends layout.pug
+
+include include/auth-input.pug
+
+append head
+  link(rel="stylesheet" href="/public/css/auth.css")
+//-   script(src="/public/js/login.js" type="module" defer)
+
+block content
+  div#parent
+    include includes/header.pug
+    div#form-container
+      form#login-form
+        h1 Hey friend!
+        h2 It's good to have you back. Sign in here and sign up for your next tea time!
+        ul#errors-container
+        input(type="hidden" name="_csrf" value=csrf)
+        input(type='text' name='username' placeholder='Email Address' required)
+        input(type='password' name='password' placeholder='Password' required)
+        button(id='submit-button' type='submit') Sign In
+        div.create-account
+          a.link-to-other-form(href="/signup") If you've never signed up before, click here and do that.
+    include include/footer.pug
