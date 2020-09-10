@@ -19,9 +19,13 @@ content-type: application/json
 }
 
 ###
-DELETE http://localhost:8000/api/rsvps/13
+DELETE http://localhost:8000/api/rsvps 
+content-type: application/json
 
-
+{
+    "userId": "5",
+    "eventId": "3"
+}
 
 
 # POST https://example.com/comments HTTP/1.1
