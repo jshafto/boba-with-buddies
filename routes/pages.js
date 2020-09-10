@@ -16,27 +16,46 @@ router.get('/', (req, res) => {
 })
 
 // '/signin' route
-router.get('/login', (req, res) => {
-    res.render('login', { title: 'Boba with Buddies' })
-
+router.get('/login', csrfProtection, (req, res) => {
+    if (req.user) {
+        res.redirect('/dashboard');
+        return;
+    }
+    res.render('login', { title: 'Boba with Buddies', csrf: req.csrfToken() })
 })
 
 
 // '/signup' route
-router.get('/signup', (req, res) => {
-    res.render('signup', { title: 'Boba with Buddies' })
 
+router.get('/signup', csrfProtection, (req, res) => {
+    if (req.user) {
+        res.redirect('/dashboard');
+        return;
+    }
+    res.render('signup', { title: 'Boba with Buddies',  csrf: req.csrfToken() })
 })
 
 
 // '/boba-times' route
+router.get('/boba-times', (req, res) => {
+    res.render('boba-times', {})
+})
 
-// '/events/:id'
+// '/boba-times/:id'
+
+
+// '/boba-times/events
 
 
 // '/dashboard' route
-// this route should be protected
-// redirects to the login page if user isn't signed in
+// redirects to the signin page if user isn't signed in
+router.get('/dashboard', csrfProtection, (req, res) => {
+    if (!req.user) {
+        res.redirect("/signin");
+        return;
+    }
+    res.render('dashboard', { nickname: req.user.nickname, csrf: req.csrfToken() });
+    });
 
 
 // '*' route

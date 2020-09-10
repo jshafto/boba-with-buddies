@@ -13,21 +13,25 @@ const { expiresIn } = require('../../config').jwtConfig;
 
 // import
 const db = require('../../db/models');
-const { User } = db;
+const { User, Event } = db;
 
 // define validations
     // check that nickname exists
-const validateNickname =
-    check("nickname")
+const validateEmail =
+    check("emailAddress")
         .exists({ checkFalsy: true })
     // check that email exists
     // check that password exists
     // could add more stringent requirements on username/password
-const validateEmailAndPassword = [
+const validateAuthFields = [
     check("emailAddress")
         .exists({ checkFalsy: true })
+        .withMessage("You need to include an email address where we can reach you.")
         .isEmail()
-        .withMessage("Please provide a valid email."),
+        .withMessage("That's not a valid email address—try again."),
+    check("nickname")
+        .exists({ checkFalsy: true })
+        .withMessage("You need to choose a nickname!"),
     check("password")
         .exists({ checkFalsy: true })
         .withMessage("Please provide a password."),
@@ -38,8 +42,7 @@ const validateEmailAndPassword = [
 router.post(
     "/",
     csrfProtection,
-    validateNickname,
-    validateEmailAndPassword,
+    validateAuthFields,
     handleValidationErrors,
     asyncHandler(async (req, res) => {
         const {
@@ -64,7 +67,7 @@ router.post(
 router.post(
     "/token",
     csrfProtection,
-    validateEmailAndPassword,
+    validateEmail,
     handleValidationErrors,
     asyncHandler(async (req, res, next) => {
         const { emailAddress, password } = req.body;
@@ -94,10 +97,58 @@ router.post(
 );
 
 
-// include delete route that ends the session?
-// include GET /token route? this seems important
+// delete route that ends the session
+router.delete('/session', asyncHandler(async(req,res) => {
+    res.clearCookie('token');
+    res.json({ message: 'success' });
+  }));
 
-// will also need routes for /:id(\\d+)/events and /:id(\\d+)/hosted
+//  GET /token route
+router.get('/token', asyncHandler(async (req, res, next) => {
+    if (req.user) {
+      return res.json({
+        id: req.user.id,
+        username: req.user.username
+      });
+    }
+    const err = new Error('Invalid token');
+    err.status = 401;
+    next(err);
+  }));
+
+// will also need routes for /:id(\\d+)/events and /:id(\\d+)/hosted?
 // so that users can view the events that they're attending and hosting from their dashboard
+router.get('/:id(\\d+)/hosted', asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const user = await User.findByPk(id,
+        {
+        include: [{
+            model: Event,
+            as: 'hostedEvents'
+            // attributes: [] // possibly just for specific attributes?
+        }]
+    }
+    );
+    const {hostedEvents} = user;
+    res.json(hostedEvents)
+}))
+
+
+// returns all events that a user has rsvp'd to
+router.get('/:id(\\d+)/events', asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const user = await User.findByPk(id,
+        {
+        include: [{
+            model: Event,
+            // attributes: [] // possibly just for specific attributes?
+        }]
+    }
+    );
+    const {Events} = user;
+    res.json(Events);
+}))
+
+
 
 module.exports = router;

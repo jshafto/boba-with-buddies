@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require("path");
 
 // require an api router and pages router?
 const pagesRouter = require('./routes/pages');
@@ -13,7 +14,6 @@ const cookieParser = require('cookie-parser');
 
 const { getUserFromToken } = require("./routes/utils/auth");
 
-
 // middleware
 app.use(morgan('dev'));
 app.use(cookieParser());
@@ -25,6 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(async (req, res, next) => {
     const token = req.cookies.token;
     if (!token) return next();
+    console.log(token)
 
     const user = await getUserFromToken(token, res);
     if (user) req.user = user;
@@ -33,7 +34,7 @@ app.use(async (req, res, next) => {
 });
 
 // include top-level routers and static assets
-app.use("/public", express.static('public'));
+app.use("/public", express.static(path.join(__dirname, "public")));
 app.use('/api', apiRouter)
 app.use('/', pagesRouter)
 

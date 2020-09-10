@@ -10,12 +10,18 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      //! ES6 syntax has its differences will need review
-
-      Event.belongsTo(models.User, {foreignKey: "hostId"})
+      // it seems like we need to alias one of the
+      Event.belongsTo(models.User, {
+        as: "host",
+        foreignKey: "hostId"
+      })
       Event.belongsTo(models.City, {foreignKey: "cityId"})
       //! Events belongs to Users in Two ways
-      Event.belongsToMany(models.User, {through: "Rsvps"})
+      Event.belongsToMany(models.User, {
+        through: models.Rsvp,
+        otherKey: 'userId',
+        foreignKey: 'eventId'
+      })
     }
   };
   Event.init({

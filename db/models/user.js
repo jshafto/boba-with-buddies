@@ -14,7 +14,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      User.hasMany(models.Event, { foreignKey: "hostId" })
+      User.hasMany(models.Event, {
+        as: 'hostedEvents',
+        foreignKey: "hostId"
+      })
+      User.belongsToMany(models.Event, {
+        through: models.Rsvp,
+        otherKey: 'eventId',
+        foreignKey: 'userId'
+      })
     }
   };
   User.init({

@@ -1,4 +1,4 @@
-mixin authInput(label, name)
-    .auth-input
-        label(for=name)= label
-        block
+mixin authInput(fieldType, name, placeholderText)
+  .auth-input
+    input(type=fieldType name=name, id=name, placeholder=placeholderText, required)
+    block
