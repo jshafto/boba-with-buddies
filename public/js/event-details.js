@@ -14,7 +14,7 @@ const populateEventsList = async () => {
                 <div class="event">
                     <div class="event-header">
                         <div class="event-image">
-                            <img src="public/js/tab-content-1.png">
+                            <img src="public/js/Coffee_6 copy.png">
                         </div>
                         Boba With host ${event.hostId}
                     </div>
