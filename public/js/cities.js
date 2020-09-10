@@ -55,6 +55,11 @@ function getEventsHTML(city){
     const {Events} = city
     const cityName = city.name
     const cityState = city.state
+    
+    if(Events.length === 0){
+        return `<div class="events__header"> Events in ${cityName}, ${cityState}</div>
+    <div class="events__container"><h3>Oh No! It looks like there isn't any events in your city!<h3><a href="/boba-times/events"><button class="rsvpButton">Let's Host One!</button></a>`
+    }
     // get the city name and state and add to top of container
     let html = `<div class="events__header"> Events in ${cityName}, ${cityState}</div>
     <div class="events__container">`
@@ -77,28 +82,3 @@ function getEventsHTML(city){
     return html;
     
 }   
-    
-    
-    
-    
-    
-// //     return html
-// // }
-// `
-//       <div class="event-container">
-//           <div class="tweet">
-//             <div class="event-header">
-//               @${tweet.User.username} · ${timestamp}
-//               <div class="dropdown-arrow">
-//                 <i class="fas fa-chevron-circle-down"></i>
-//               </div>
-//               <div class="modal-background" style="display: none"></div>
-//               <ul class="dropdown-menu" style="display: none">
-//                 <li><button class="joinEvent">Count Me In</button></li>
-//               </ul>
-//             </div>
-//             <div class="tweet-contents">
-//               ${tweet.message}
-//             </div>
-//       </div>
-//     `

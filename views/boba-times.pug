@@ -1,11 +1,16 @@
+
 extends layout.pug
 append head
+    link(rel="stylesheet" href="/public/css/map.css")
     script(async defer src='/public/js/cities.js' type='module')
+    script(async defer src="./public/js/mapFeature.js")
+    script(async defer src=`https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`)
 block content
     div#parent
-      include include/header.pug
-      h1 Upcoming Boba Times
-      h3 Jump to Your city's Boba Times
-      .cities
-      .events
-      include include/footer.pug
+        include include/header.pug
+        h1 Upcoming Boba Times
+        #map
+        h3 Jump to Your city's Boba Times
+        .cities
+        .events
+        include include/footer.pug
