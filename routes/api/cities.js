@@ -42,27 +42,4 @@ router.get('/:id(\\d+)/events', asyncHandler( async (req, res) => {
     res.json({ city })
 }))
 
-// router.get('/:id(\\d+)/events', asyncHandler( async(req,res) => {
-    
-//     const cityEvents = await Event.findAll({
-//         where: {
-//             cityId: req.params.id
-//         },
-//         include: [
-//             {
-//                 model: User,
-//                 as: 'host',
-//                 attributes: ['nickname']
-//             },
-//             {
-//                 model: User,
-//                 attributes: ['nickname']
-//             }
-//         ]
-        
-//     })
-
-//     res.json(cityEvents)
-// }))
-
 module.exports = router;
