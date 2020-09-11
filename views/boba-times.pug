@@ -2,15 +2,19 @@
 extends layout.pug
 append head
     link(rel="stylesheet" href="/public/css/map.css")
-    script(async defer src='/public/js/cities.js' type='module')
+    link(rel="stylesheet" href="/public/css/boba-times.css")
+    script(defer src='/public/js/cities.js' type='module')
     script(defer src="/public/js/mapFeature.js")
     script(defer src=`https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`)
 block content
     div#parent
         include include/header.pug
-        h1 Upcoming Boba Times
-        #map
-        h3 Jump to Your city's Boba Times
-        .cities
-        .events
+        div#body-container
+            div#body
+                h1 Upcoming Boba Times
+                #map
+                h3 Jump to Your city's Boba Times
+                div.cities-container
+                .cities
+                .events
         include include/footer.pug
