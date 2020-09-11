@@ -1,11 +1,8 @@
-#parent {
-    background-color: #F7BF4D;
-}
+
 #header {
     display: block;
     background-color: #F7BF4D;
     color: #FEFEFE;
-    font-family: "Nanum Pen Script";
     font-size: 2em;
     font-weight: 400;
     height: 50px;
@@ -46,8 +43,19 @@ a.header-link {
     vertical-align: top;
 }
 
+button#signup {
+    padding: 9px 18px;
+    background-color: #FEFEFE;
+    border: 2px solid #FEFEFE;
+    border-radius: 3px;
+    color: #F7BF4D;
+}
 
+/* the above is the styling for include/header.pug */
 
+#parent {
+    background-color: #F7BF4D;
+}
 
 h1 {
     font-weight: bold;
@@ -72,8 +80,6 @@ h2 {
 
 #form-container {
     background-color: #faf6e8;
-
-
 }
 
 #login-form, #signup-form {
@@ -110,17 +116,12 @@ button[type='submit'] {
     margin-top: 1em;
 }
 
-button#signup {
-    padding: 9px 18px;
-    background-color: #FEFEFE;
-    border: 2px solid #FEFEFE;
-    border-radius: 3px;
-    color: #F7BF4D;
+div.create-account  {
+    margin-top: 20px;
+    font-size: 18px;
 }
 
-
-
-div.create-account  {
+div.existing-account  {
     margin-top: 20px;
     font-size: 18px;
 }
@@ -132,21 +133,7 @@ a.link-to-other-form{
     line-height: 1.625;
 }
 
-div.existing-account  {
-    margin-top: 20px;
-    font-size: 18px;
-}
-
-
-h4 {
-    font-size: 15px;
-    color: #757575;
-    text-align: center;
-    margin-top:25px;
-    margin-bottom: 45px;
-    padding-left: 79px;
-    padding-right: 79px;
-}
+/* the below is the styling for include/footer.pug */
 
 div#footer {
     display: block;
@@ -157,7 +144,6 @@ div#footer {
     font-size: 18px;
     line-height: 1.625;
 }
-
 
 div#footer-container {
     display: block;

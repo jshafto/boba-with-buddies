@@ -1,0 +1,251 @@
+
+#header {
+    display: block;
+    background-color: #fcda7f;
+    color: #FEFEFE;
+    font-size: 2em;
+    font-weight: 400;
+    height: 50px;
+    max-width: 1020px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.logo > a {
+    float: left;
+    font-weight: bold;
+    line-height: 2;
+    font-size: 25px;
+    color: #FEFEFE;
+}
+
+div.wrapper-nav {
+    float: right;
+    justify-content: right;
+    color: #FEFEFE;
+    margin-top: 5px;
+}
+
+div.wrapper-nav > button{
+    margin-left: 15px;
+    outline: 0;
+}
+
+a.header-link {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.logo {
+    float:left;
+    font-size: 30px;
+    font-weight: bolder ;
+    vertical-align: top;
+}
+
+button#signup {
+    padding: 9px 18px;
+    background-color: #FEFEFE;
+    border: 2px solid #FEFEFE;
+    border-radius: 3px;
+    color: #F7BF4D;
+}
+
+/* the above is the styling for include/header.pug */
+
+
+#parent {
+    background-color: #fcda7f;
+}
+
+div#description-wrapper {
+    background-image: url("../images/boba.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-color:#fef3ed;
+    height: 580px;
+    display: flex;
+    width: 100%;
+}
+
+h1 {
+    padding-top: 50px;
+    padding-left: 40px;
+    font-weight: bold;
+    line-height: 2;
+    text-align: left;
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    color: #4a3520;
+}
+
+h2 {
+    padding-left: 80px;
+    font-weight: bold;
+    line-height: 2;
+    text-align: right;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    color: #4a3520
+}
+
+div#description {
+    display: inline-block;
+    text-align: right;
+    margin-left: 200px;
+
+}
+
+button#boba-time-button {
+    padding: 9px 18px;
+    background-color: #ebae4a;
+    border: 0;
+    border-radius: 10px;
+    color: #FEFEFE;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 1em 1.5em;
+    letter-spacing: 2px;
+    margin-top: 1em;
+    line-height: 5px;
+    height: 50px;
+    margin-top: 240px;
+    margin-left: 450px
+}
+
+div#slogan {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    background-color: bisque;
+    margin-bottom: 54px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+
+}
+
+div.qualities {
+    margin-left: 14%;
+    display: flex;
+    flex-direction: column;
+}
+
+text.qualities-heading {
+    padding: 10px;
+    color: rgba(41, 41, 41, 1);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #4a3520;
+}
+
+text.qualities-subheading {
+    padding: 10px;
+    color: rgba(41, 41, 41, 1);
+    font-size: 16px;
+    line-height: 1.625;
+    color: #4a3520;
+}
+
+div#body-question {
+    line-height: 1.25;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 18px;
+}
+
+div#body {
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 36px;
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+div#body-part {
+    display: block;
+}
+
+div.body-part > img {
+    float: left;
+    height: 312.52px;
+    width: 336.36px;
+    margin-bottom: 50px;
+}
+
+div.body-text {
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+    padding-top: 5%;
+}
+
+div.body-heading {
+    float: left;
+    display: block;
+    margin-right: 2.8425860857%;
+    width: 38.2944483486%;
+}
+
+text.body-heading {
+    padding: 10px;
+    color: rgba(41, 41, 41, 1);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #4a3520;
+}
+
+text.body-subheading {
+    padding: 10px;
+    color: rgba(41, 41, 41, 1);
+    font-size: 16px;
+    line-height: 1.625;
+    color: #4a3520;
+
+}
+
+/* the below is the styling for include/footer.pug */
+
+div#footer {
+    display: block;
+    color: #FEFEFE;
+    background-color: #fcda7f;
+    overflow: auto;
+    padding: 2em 0;
+    font-size: 18px;
+    line-height: 1.625;
+}
+
+div#footer-container {
+    display: block;
+    box-sizing: border-box;
+    padding: 0 1em;
+    max-width: 1020px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    line-height: 1.625;
+}
+
+div#footer-links {
+    float: left;
+    display: block;
+    margin-right: 2.8425860857%;
+    width: 28.01018974%;
+    font-weight: bold;
+    margin-bottom: 1.5em;
+    font-size: 18px;
+    line-height: 1.625;
+}
+
+div#footer-ethos {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
