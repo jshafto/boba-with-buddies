@@ -74,7 +74,7 @@ const populateContainers = async () => {
 
     res = await fetch(`/api/users/${userId}/hosted`);
     const hostedEvents = await res.json();
-    if (joinedEvents.length) {
+    if (hostedEvents.length) {
       populate(hostedEvents, hostedContainer);
     } else {
       document.querySelector('.headline-hosted')
