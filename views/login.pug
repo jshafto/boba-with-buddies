@@ -3,7 +3,7 @@ extends layout.pug
 include include/auth-input.pug
 
 append head
-  script(src="/public/js/login.js" type="module" defer)
+  script(src="/public/js/signin.js" type="module" defer)
   link(rel="stylesheet" href="/public/css/auth.css")
 
 block content
@@ -17,7 +17,8 @@ block content
         input(type="hidden" name="_csrf" value=csrf)
         +authInput("text", "emailAddress", "Email Address")
         +authInput("password", "password", "Password")
-        button(type="submit") Sign in
+        button(id="submit-button" type="submit") Sign in
+        button(id="demo-button" type="demo") Demo User
         div.create-account
           a.link-to-other-form(href="/signup") Haven't been here before? Sign up and introduce yourself.
     include include/footer.pug
