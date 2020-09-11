@@ -77,8 +77,8 @@ module.exports = {
     
     await queryInterface.bulkInsert('Events', [
       {
-        date: randomDate(new Date(), new Date(2021, 5, 31)),
-        address: randAddress.address.streetAddress(),
+        date: new Date(),
+        address: '825 Battery st.',
         hostId: demoUser.id,
         cityId: sanFran.id,
         createdAt: new Date(),

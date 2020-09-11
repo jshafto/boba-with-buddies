@@ -5,6 +5,7 @@ const { User, Event } = db;
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
+    const demoUser = await User.findOne({ where: {emailAddress: 'boba@demo.com'}});
     const someUser1 = await User.findOne({order: [[Sequelize.fn('RANDOM')]]});
     const someUser2 = await User.findOne({order: [[Sequelize.fn('RANDOM')]]});
     const someUser3 = await User.findOne({order: [[Sequelize.fn('RANDOM')]]});
