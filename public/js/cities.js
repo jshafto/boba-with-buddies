@@ -58,7 +58,7 @@ function getEventsHTML(city){
     
     if(Events.length === 0){
         return `<div class="events__header"> Events in ${cityName}, ${cityState}</div>
-    <div class="events__container"><h3>Oh No! It looks like there isn't any events in your city!<h3><a href="/boba-times/events"><button class="rsvpButton">Let's Host One!</button></a>`
+    <div class="events__container"><h3>Oh No! It looks like there isn't any events in your city!<h3><a href="/hosting"><button class="rsvpButton">Let's Host One!</button></a>`
     }
     // get the city name and state and add to top of container
     let html = `<div class="events__header"> Events in ${cityName}, ${cityState}</div>
