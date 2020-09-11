@@ -10,7 +10,7 @@ block content
   div#parent
     include include/header.pug
     div#form-container
-      form#login-form
+      form#login__form--signin
         h1 Hey buddy!
         h2 It's good to have you back. Sign in here and sign up for your next boba time!
         ul#errors-container
@@ -18,7 +18,11 @@ block content
         +authInput("text", "emailAddress", "Email Address")
         +authInput("password", "password", "Password")
         button(id="submit-button" type="submit") Sign in
-        button(id="demo-button" type="demo") Demo User
+      form#login__form--demo
+        input(type="hidden" name="_csrf" value=csrf)
+        input(type="hidden" name="password" value="password")
+        input(type="hidden" name="emailAddress" value="boba@demo.com")
+        button(id="demo-button" type="submit") Demo User
         div.create-account
           a.link-to-other-form(href="/signup") Haven't been here before? Sign up and introduce yourself.
     include include/footer.pug
