@@ -41,7 +41,6 @@ const getUser = () => {
 const getEvents = async () => {
     // this is a shit hack cause i couldn't get the regex to work. sue me.
     const id = parseInt(window.location.href.split('/').filter(item => item).reverse()[0]);
-    // const id = parseInt(document.querySelector(".whichevent").id, 10);
 
     const res = await fetch(`/api/events/${id}`);
     const data = await res.json();
@@ -110,10 +109,11 @@ document.addEventListener('click', async (e) => {
             }
         });
         const data = await newEvent.json();
-        console.log(newEvent)
         if (!newEvent.ok) {
             const { message } = data;
             const errorsContainer = document.querySelector('#errors-container');
+            // there isn't actually an errors container on this page,
+            // so we may want to take this out
             errorsContainer.innerHTML = message;
             return;
         }
