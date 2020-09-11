@@ -20,7 +20,7 @@ router.get('/', asyncHandler(async (req, res) => {
     // res.send("Events!")
 }));
 
-router.get('/:id', asyncHandler(async (req, res, next) => {
+router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     const event = await Event.findByPk(req.params.id, {
       include: [
         {
