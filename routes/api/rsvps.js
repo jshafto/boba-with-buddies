@@ -13,7 +13,7 @@ const { User, Rsvp, Event } = db;
 router.post("/", asyncHandler(async (req, res) => {
     const { userId, eventId } = req.body;
     const check = await Rsvp.findOne({where: {userId, eventId}})
-    console.log(check)
+    // console.log(check)
     if(!check){
         const newRsvp = await Rsvp.create({ userId, eventId });
         
@@ -31,23 +31,6 @@ router.delete("/", asyncHandler(async (req, res) => {
             eventId: eventId
         }
     })
-    console.log(rsvp)
-    //  const reqId = parseInt(req.params.id, 10)
-    // // console.log(reqId)
-    // const rsvp = await Rsvp.findAll(
-    //     {where:
-    //         {id: reqId}
-    //     }
-    // )
-    // console.log( 'RSVP LOGGED HERE :', rsvp)
-    
-    // if(!rsvp){
-    //     // const err = new Error("Rsvp not found.");
-    //     // err.status = 404;
-    //     // next(err);  
-        // console.log(rsvp,": not found")
-    //     return;
-    // }
 
     await rsvp.destroy();
     res.json({message: 'rsvp deleted'}) 
