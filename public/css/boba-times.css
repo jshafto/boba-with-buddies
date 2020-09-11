@@ -1,0 +1,151 @@
+
+#header {
+    font-family: "Nanum Pen Script";
+    display: block;
+    background-color: #F7BF4D;
+    color: #FEFEFE;
+    font-size: 2em;
+    font-weight: 400;
+    height: 50px;
+    max-width: 1020px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.logo > a {
+    float: left;
+    font-weight: bold;
+    line-height: 2;
+    font-size: 25px;
+    color: #FEFEFE;
+}
+
+div.wrapper-nav {
+    float: right;
+    justify-content: right;
+    color: #FEFEFE;
+    margin-top: 5px;
+}
+
+div.wrapper-nav > button{
+    margin-left: 15px;
+    outline: 0;
+}
+
+a.header-link {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.logo {
+    float:left;
+    font-size: 30px;
+    font-weight: bolder ;
+    vertical-align: top;
+}
+
+button#signup, button#signout {
+    padding: 9px 18px;
+    background-color: #FEFEFE;
+    border: 2px solid #FEFEFE;
+    border-radius: 3px;
+    color: #F7BF4D;
+
+}
+
+/* the above is the styling for include/header.pug */
+
+#parent {
+    background-color: #F7BF4D;
+}
+
+button.cityButton, button.rsvpButton {
+    background-color: #EF6236;
+    border: 2px solid #EF6236;
+    border-radius: 10px;
+    display: inline-block;
+    font-weight: bold;
+    color:white;
+    font-size: 12px;
+    padding: 8px;
+    letter-spacing: 2px;
+    margin-top: 1em;
+}
+
+h1 {
+    padding-top: 50px;
+    padding-left: 40px;
+    font-weight: bold;
+    line-height: 2;
+    text-align: left;
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    color: #4a3520;
+}
+
+h3 {
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 40px;
+    font-weight: bold;
+    line-height: 2;
+    text-align: left;
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    color: #4a3520;
+}
+
+div#body-container {
+    background-color: #faf6e8;
+    padding-bottom: 50px;
+
+}
+
+#map {
+    justify-content: center;
+}
+
+
+/* the below is the styling for include/footer.pug */
+
+div#footer {
+    display: block;
+    color: #FEFEFE;
+    background-color: #F7BF4D;
+    overflow: auto;
+    padding: 2em 0;
+    font-size: 18px;
+    line-height: 1.625;
+}
+
+div#footer-container {
+    display: block;
+    box-sizing: border-box;
+    padding: 0 1em;
+    max-width: 1020px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    line-height: 1.625;
+}
+
+div#footer-links {
+    float: left;
+    display: block;
+    margin-right: 2.8425860857%;
+    width: 28.01018974%;
+    font-weight: bold;
+    margin-bottom: 1.5em;
+    font-size: 18px;
+    line-height: 1.625;
+}
+
+div#footer-ethos {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
