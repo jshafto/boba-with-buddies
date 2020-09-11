@@ -51,10 +51,19 @@ router.get('/boba-times/:id(\\d+)', csrfProtection, (req, res) => {
 // redirects to the signin page if user isn't signed in
 router.get('/dashboard', csrfProtection, (req, res) => {
     if (!req.user) {
-        res.redirect("/signin");
+        res.redirect("/login");
         return;
     }
     res.render('dashboard', { nickname: req.user.nickname, csrf: req.csrfToken() });
+});
+
+
+router.get('/hosting', csrfProtection, (req, res) => {
+    if (!req.user) {
+        res.redirect("/login");
+        return;
+    }
+    res.render('hosting', { csrf: req.csrfToken(), id: req.user.id});
 });
 
 
