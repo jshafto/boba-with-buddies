@@ -1,4 +1,10 @@
-extends boba-times
+extends layout
 
-block events
-    h1 SINGLE CITY EVENTS EXTENDED
+append head
+    script(src="/public/js/event-details.js" type="module" defer)
+
+block content
+  div#parent
+    include include/header.pug
+    .events-list
+    include include/footer.pug
