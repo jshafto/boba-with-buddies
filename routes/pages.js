@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const { key } = require("../config/index").googleMaps
 const csrfProtection = require("csurf")({ cookie: true });
-const { asyncHandler } = require('./utils')
-
 
 // this router only handles GET requests that return actual pages
 // on the site
@@ -34,26 +32,19 @@ router.get('/signup', csrfProtection, (req, res) => {
         res.redirect('/dashboard');
         return;
     }
-    res.render('signup', { title: 'Boba with Buddies',  csrf: req.csrfToken() })
+    res.render('signup', { title: 'Boba with Buddies', csrf: req.csrfToken() })
 })
 
 
 // '/boba-times' route
 router.get('/boba-times', (req, res) => {
-    res.render('boba-times', {key})
+    res.render('boba-times', { key })
 })
 
 // '/boba-times/:id'
-
-// '/events/:id'
 router.get('/boba-times/:id(\\d+)', csrfProtection, (req, res) => {
-    const id = parseInt(req.params.id);
-    // const event = await event.findByPk(id);
-
-    res.render('events', { id });
+    res.render('events', { title: 'Boba with Buddies' });
 })
-
-// '/boba-times/events
 
 
 // '/dashboard' route
@@ -64,7 +55,7 @@ router.get('/dashboard', csrfProtection, (req, res) => {
         return;
     }
     res.render('dashboard', { nickname: req.user.nickname, csrf: req.csrfToken() });
-    });
+});
 
 
 // '*' route
