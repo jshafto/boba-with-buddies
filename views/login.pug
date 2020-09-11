@@ -15,16 +15,10 @@ block content
         h2 It's good to have you back. Sign in here and sign up for your next boba time!
         ul#errors-container
         input(type="hidden" name="_csrf" value=csrf)
-<<<<<<< HEAD
-        input(type='text' name='username' placeholder='Email Address' required)
-        input(type='password' name='password' placeholder='Password' required)
-        button(id='submit-button' type='submit') Sign In
-        button(id='demo-button' type='demo') Demo User
-=======
         +authInput("text", "emailAddress", "Email Address")
         +authInput("password", "password", "Password")
-        button(type="submit") Sign in
->>>>>>> 1578052b12c87496ad5c78e0f793441dd78f9627
+        button(id="submit-button" type="submit") Sign in
+        button(id="demo-button" type="demo") Demo User
         div.create-account
           a.link-to-other-form(href="/signup") Haven't been here before? Sign up and introduce yourself.
     include include/footer.pug
