@@ -7,6 +7,12 @@ const randAddress = require('faker')
 module.exports = {
   up: async (queryInterface, Sequelize) => {
 
+    const demoUser = await User.findOne({
+      where: {
+        emailAddress: 'boba@demo.com'
+      }
+    });
+
     const someUser1 = await User.findOne({
       order: [[Sequelize.fn('RANDOM')]]
     });
@@ -34,6 +40,12 @@ module.exports = {
     
     
 
+    const sanFran = await City.findOne({
+      where: {
+        name: 'San Francisco'
+      }
+    });
+
     const someCity1 = await City.findOne({
       order: [[Sequelize.fn('RANDOM')]]
     });
@@ -59,10 +71,21 @@ module.exports = {
       order: [[Sequelize.fn('RANDOM')]]
     });
 
+    function randomDate(start, end) {
+      return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+    }
     
     await queryInterface.bulkInsert('Events', [
       {
-        date: new Date(2021, 11, 24, 10, 33, 30, 0),
+        date: randomDate(new Date(), new Date(2021, 5, 31)),
+        address: randAddress.address.streetAddress(),
+        hostId: demoUser.id,
+        cityId: sanFran.id,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        date: randomDate(new Date(), new Date(2021, 5, 31)),
         address: randAddress.address.streetAddress(),
         hostId: someUser8.id,
         cityId: someCity8.id,
@@ -70,7 +93,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        date: new Date(2020, 12, 5, 11, 30, 0, 0),
+        date: randomDate(new Date(), new Date(2021, 5, 31)),
         address: randAddress.address.streetAddress(),
         hostId: someUser1.id,
         cityId: someCity1.id,
@@ -78,7 +101,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        date: new Date(2020, 12, 5, 11, 30, 0, 0),
+        date: randomDate(new Date(), new Date(2021, 5, 31)),
         address: randAddress.address.streetAddress(),
         hostId: someUser2.id,
         cityId: someCity2.id,
@@ -86,7 +109,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        date: new Date(2020, 12, 5, 11, 30, 0, 0),
+        date: randomDate(new Date(), new Date(2021, 5, 31)),
         address: randAddress.address.streetAddress(),
         hostId: someUser3.id,
         cityId: someCity3.id,
@@ -94,7 +117,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        date: new Date(2020, 12, 5, 11, 30, 0, 0),
+        date: randomDate(new Date(), new Date(2021, 5, 31)),
         address: randAddress.address.streetAddress(),
         hostId: someUser4.id,
         cityId: someCity4.id,
@@ -102,7 +125,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        date: new Date(2020, 12, 5, 11, 30, 0, 0),
+        date: randomDate(new Date(), new Date(2021, 5, 31)),
         address: randAddress.address.streetAddress(),
         hostId: someUser5.id,
         cityId: someCity5.id,
@@ -110,7 +133,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        date: new Date(2020, 12, 5, 11, 30, 0, 0),
+        date: randomDate(new Date(), new Date(2021, 5, 31)),
         address: randAddress.address.streetAddress(),
         hostId: someUser8.id,
         cityId: someCity8.id,
@@ -118,7 +141,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        date: new Date(2020, 12, 5, 11, 30, 0, 0),
+        date: randomDate(new Date(), new Date(2021, 5, 31)),
         address: randAddress.address.streetAddress(),
         hostId: someUser2.id,
         cityId: someCity2.id,
@@ -126,7 +149,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        date: new Date(2020, 12, 5, 11, 30, 0, 0),
+        date: randomDate(new Date(), new Date(2021, 5, 31)),
         address: randAddress.address.streetAddress(),
         hostId: someUser6.id,
         cityId: someCity6.id,
@@ -134,7 +157,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        date: new Date(2020, 12, 5, 11, 30, 0, 0),
+        date: randomDate(new Date(), new Date(2021, 5, 31)),
         address: randAddress.address.streetAddress(),
         hostId: someUser7.id,
         cityId: someCity7.id,
@@ -142,7 +165,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        date: new Date(2020, 12, 5, 11, 30, 0, 0),
+        date: randomDate(new Date(), new Date(2021, 5, 31)),
         address: randAddress.address.streetAddress(),
         hostId: someUser3.id,
         cityId: someCity3.id,
@@ -150,7 +173,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        date: new Date(2020, 12, 5, 11, 30, 0, 0),
+        date: randomDate(new Date(), new Date(2021, 5, 31)),
         address: randAddress.address.streetAddress(),
         hostId: someUser4.id,
         cityId: someCity4.id,
