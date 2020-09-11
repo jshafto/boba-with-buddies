@@ -5,7 +5,7 @@ const { asyncHandler, handleValidationErrors } = require('../utils');
 const csrfProtection = require("csurf")({ cookie: true });
 
 const db = require('../../db/models');
-const { Event, User } = db;
+const { Event, User, City } = db;
 
 router.get('/', asyncHandler(async (req, res) => {
     const events = await Event.findAll({
@@ -25,8 +25,17 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
       include: [
         {
           model: User,
+          as: "host",
           attributes: ["nickname"],
         },
+        {
+          model: User,
+          attributes: ["nickname"],
+        },
+        {
+          model: City,
+          attributes: ["name"]
+        }
       ],
     });
     if (!event) {

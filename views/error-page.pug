@@ -1,4 +1,7 @@
 extends layout.pug
 
 block content
-  h1 Sorry Bro, that page doesn’t exist!
+  div#parent
+    include include/header.pug
+    h1 Sorry Bro, that page doesn’t exist!
+    include include/footer.pug

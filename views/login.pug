@@ -11,13 +11,13 @@ block content
     include include/header.pug
     div#form-container
       form#login-form
-        h1 Hey friend!
-        h2 It's good to have you back. Sign in here and sign up for your next tea time!
+        h1 Hey buddy!
+        h2 It's good to have you back. Sign in here and sign up for your next boba time!
         ul#errors-container
         input(type="hidden" name="_csrf" value=csrf)
-        input(type='text' name='username' placeholder='Email Address' required)
-        input(type='password' name='password' placeholder='Password' required)
-        button(id='submit-button' type='submit') Sign In
+        +authInput("text", "emailAddress", "Email Address")
+        +authInput("password", "password", "Password")
+        button(type="submit") Sign in
         div.create-account
-          a.link-to-other-form(href="/signup") If you've never signed up before, click here and do that.
+          a.link-to-other-form(href="/signup") Haven't been here before? Sign up and introduce yourself.
     include include/footer.pug

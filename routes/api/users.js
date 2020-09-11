@@ -124,7 +124,11 @@ router.get('/:id(\\d+)/hosted', asyncHandler(async (req, res) => {
         {
         include: [{
             model: Event,
-            as: 'hostedEvents'
+            as: 'hostedEvents',
+            include: [{
+                model: User,
+                as: 'host'
+            }]
             // attributes: [] // possibly just for specific attributes?
         }]
     }
@@ -141,6 +145,10 @@ router.get('/:id(\\d+)/events', asyncHandler(async (req, res) => {
         {
         include: [{
             model: Event,
+            include: [{
+                model: User,
+                as: 'host'
+            }]
             // attributes: [] // possibly just for specific attributes?
         }]
     }

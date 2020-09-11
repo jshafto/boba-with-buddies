@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const { key } = require("../config/index").googleMaps
 const csrfProtection = require("csurf")({ cookie: true });
 
 // this router only handles GET requests that return actual pages
@@ -32,19 +32,19 @@ router.get('/signup', csrfProtection, (req, res) => {
         res.redirect('/dashboard');
         return;
     }
-    res.render('signup', { title: 'Boba with Buddies',  csrf: req.csrfToken() })
+    res.render('signup', { title: 'Boba with Buddies', csrf: req.csrfToken() })
 })
 
 
 // '/boba-times' route
 router.get('/boba-times', (req, res) => {
-    res.render('boba-times', {})
+    res.render('boba-times', { key })
 })
 
 // '/boba-times/:id'
-
-
-// '/boba-times/events
+router.get('/boba-times/:id(\\d+)', csrfProtection, (req, res) => {
+    res.render('events', { title: 'Boba with Buddies' });
+})
 
 
 // '/dashboard' route
@@ -55,7 +55,7 @@ router.get('/dashboard', csrfProtection, (req, res) => {
         return;
     }
     res.render('dashboard', { nickname: req.user.nickname, csrf: req.csrfToken() });
-    });
+});
 
 
 // '*' route
@@ -64,6 +64,7 @@ router.get('/dashboard', csrfProtection, (req, res) => {
 router.get('*', (req, res) => {
     res.render('error-page');
 });
+
 
 
 
