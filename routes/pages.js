@@ -63,7 +63,7 @@ router.get('/hosting', csrfProtection, (req, res) => {
         res.redirect("/signin");
         return;
     }
-    res.render('hosting', { csrf: req.csrfToken() });
+    res.render('hosting', { csrf: req.csrfToken(), id: req.user.id});
 });
 
 

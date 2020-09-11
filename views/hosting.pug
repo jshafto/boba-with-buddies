@@ -2,8 +2,8 @@ extends layout.pug
 
 include include/auth-input.pug
 
-//- append head
-//-   script(src="/public/js/login.js" type="module" defer)
+append head
+  script(src="/public/js/hosting.js" type="module" defer)
 
 block content
   div#parent
@@ -11,9 +11,14 @@ block content
     div#form-container
       form#hosting-form
         h1 Tell us about your boba time!
+        h2 When and where will you be grabbing boba?
         ul#errors-container
         input(type="hidden" name="_csrf" value=csrf)
+        input(type="hidden" name="userId" value=id)
         +authInput("date", "date")
         +authInput("time", "time")
-        button(type="submit") IT'S BOBA TIME
+        +authInput("text", "address", "Address")
+        select(name="cities" id="cities-dropdown")
+          option(value="") --Please choose an option--
+        button(id="submit-button" type="submit") IT'S BOBA TIME
     include include/footer.pug
