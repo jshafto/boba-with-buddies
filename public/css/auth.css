@@ -83,7 +83,10 @@ h2 {
     background-color: #faf6e8;
 }
 
-#login-form, #signup-form {
+#login__form--signin,
+#login__form--demo,
+#signup-form,
+#hosting-form {
     text-align: center;
     width: auto;
     display: flex;
