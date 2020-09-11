@@ -42,9 +42,14 @@ const populate = (events, container) => {
     const host = event.host.nickname;
     const date = new Date(...event.date.split('T')[0].split('-').map(el=> parseInt(el)));
     const dateString = date.toDateString();
-    const time = event.date.split('T')[1].split(':').map(el=> parseInt(el)).slice(0, 2)
-    if (time[0]>12) time[0]-=12;
-    const timeString = time.join(':');
+    const time = event.date.split('T')[1].split(':').slice(0, 2)
+    time[0] = parseInt(time[0]);
+    let timestring = ' AM'
+    if (time[0]>=12) {
+      time[0]-=12;
+      timestring = ' PM'
+    };
+    const timeString = time.join(':')+ timestring;
     html += `
     <div class="event-box">
       <div class="date-box">${dateString}</div>
