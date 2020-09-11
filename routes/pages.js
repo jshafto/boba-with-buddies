@@ -50,17 +50,10 @@ router.get('/boba-times/:id(\\d+)', csrfProtection, (req, res) => {
 // '/dashboard' route
 // redirects to the signin page if user isn't signed in
 router.get('/dashboard', csrfProtection, (req, res) => {
-<<<<<<< HEAD
-    // if (!req.user) {
-    //     res.redirect("/signin");
-    //     return;
-    // }
-=======
     if (!req.user) {
         res.redirect("/login");
         return;
     }
->>>>>>> master
     res.render('dashboard', { nickname: req.user.nickname, csrf: req.csrfToken() });
 });
 
