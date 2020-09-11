@@ -84,7 +84,8 @@ h2 {
 
 #login__form--signin,
 #login__form--demo,
-#signup-form {
+#signup-form,
+#hosting-form {
     text-align: center;
     width: auto;
     display: flex;
