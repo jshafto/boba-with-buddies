@@ -1,0 +1,19 @@
+extends layout.pug
+
+include include/auth-input.pug
+
+//- append head
+//-   script(src="/public/js/login.js" type="module" defer)
+
+block content
+  div#parent
+    include include/header.pug
+    div#form-container
+      form#hosting-form
+        h1 Tell us about your boba time!
+        ul#errors-container
+        input(type="hidden" name="_csrf" value=csrf)
+        +authInput("date", "date")
+        +authInput("time", "time")
+        button(type="submit") IT'S BOBA TIME
+    include include/footer.pug

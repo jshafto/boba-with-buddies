@@ -58,6 +58,15 @@ router.get('/dashboard', csrfProtection, (req, res) => {
 });
 
 
+router.get('/hosting', csrfProtection, (req, res) => {
+    if (!req.user) {
+        res.redirect("/signin");
+        return;
+    }
+    res.render('hosting', { csrf: req.csrfToken() });
+});
+
+
 // '*' route
 // this will render an error page if the user requests a page
 // that we don't have
