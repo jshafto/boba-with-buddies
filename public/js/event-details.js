@@ -26,6 +26,7 @@ const getToken = () => {
 
 const getUser = () => {
     const token = getToken();
+    if(!token) return;
 
     const payloadEncoded = token.split(".")[1];
     // atob function decodes base 64 encoded strings
@@ -89,7 +90,13 @@ populateEventsList();
 document.addEventListener('click', async (e) => {
     if(e.target.classList.contains('event__button')){
         const eventId = e.target.id
-        const userId = getUser().data.id
+        const user = getUser()
+        console.log(user)
+        if (!user) {
+            window.location.href = '/signup'
+            return;
+        }
+        const userId = user.data.id
         const body = {eventId, userId}
         const newEvent = await fetch('/api/rsvps/', {
             method: "POST",
@@ -109,5 +116,5 @@ document.addEventListener('click', async (e) => {
         window.location.href = '/boba-times';
         return;
     };
-    window.location.href = '/signup'
+
 });
