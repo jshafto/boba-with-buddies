@@ -101,7 +101,7 @@ button#boba-time-signup {
 
 div#body-container {
     background-color: #faf6e8;
-    height: 500px;
+    height: auto;
     display: flex;
     padding-top: 30px;
 }
