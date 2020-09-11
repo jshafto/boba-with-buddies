@@ -44,12 +44,12 @@ const populate = (events, container) => {
     const dateString = date.toDateString();
     const time = event.date.split('T')[1].split(':').slice(0, 2)
     time[0] = parseInt(time[0]);
-    let timestring = ' AM'
+    let timeEnd= ' AM'
     if (time[0]>=12) {
       time[0]-=12;
-      timestring = ' PM'
-    };
-    const timeString = time.join(':')+ timestring;
+      timeEnd = ' PM'
+    };const userId = user.data.id
+    const timeString = time.join(':')+ timeEnd;
     html += `
     <div class="event-box">
       <div class="date-box">${dateString}</div>

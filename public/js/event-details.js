@@ -44,7 +44,7 @@ const getEvents = async () => {
 
     const res = await fetch(`/api/events/${id}`);
     const data = await res.json();
-    return data;
+    return {...data};
 };
 
 const populateEventsList = async () => {
@@ -54,12 +54,28 @@ const populateEventsList = async () => {
     // console.log(event)
     const date = new Date(...event.date.split('T')[0].split('-').map(el=> parseInt(el)));
     const dateString = date.toDateString();
-    const time = event.date.split('T')[1].split(':').map(el=> parseInt(el)).slice(0, 2)
-    if (time[0]>12) time[0]-=12;
-    const timeString = time.join(':');
+    const time = event.date.split('T')[1].split(':').slice(0, 2)
+    time[0] = parseInt(time[0]);
+    let timeEnd = ' AM'
+    if (time[0]>=12) {
+      time[0]-=12;
+      timeEnd = ' PM'
+    };
+    const timeString = time.join(':')+ timeEnd;
     const hostName = event.host.nickname.toUpperCase();
     const url = window.location.href;
     const numAttendees = event.Users.length;
+
+    const user = getUser();
+    const userId = user.data.id
+
+    let buttonText;
+    const attendees = event.Users.map(el =>el.Rsvp.userId);
+    if (!attendees.includes(userId)) {
+        buttonText = `<button class='event__button' id='${event.id}'>SIGN ME UP</button>`
+    } else {
+        buttonText = `<button class='event__button' id='${event.id}'>CANCEL MY RSVP</button>`
+    }
 
     const eventLi = `
         <div class="rsvp-container">
@@ -80,7 +96,7 @@ const populateEventsList = async () => {
                 BOBA-BUDDIES CURRENTLY ATTENDING: ${numAttendees}
             </div>
             <div>
-                <button class='event__button' id='${event.id}'>SIGN ME UP</button>
+                ${buttonText}
             </div>
         </div>
     `;
@@ -100,25 +116,48 @@ document.addEventListener('click', async (e) => {
             return;
         }
         const userId = user.data.id
-        const body = {eventId, userId}
-        const newEvent = await fetch('/api/rsvps/', {
-            method: "POST",
-            body: JSON.stringify(body),
-            headers: {
-                "Content-Type": "application/json"
+
+        // determine if user is attending event
+        const data = await fetch(`/api/events/${eventId}`);
+        const {event} = await data.json();
+        console.log(event);
+        const attendees = event.Users.map(el =>el.Rsvp.userId);
+
+        // if not, rsvp them
+        if (!attendees.includes(userId)) {
+            const body = {eventId, userId}
+            const newEvent = await fetch('/api/rsvps/', {
+                method: "POST",
+                body: JSON.stringify(body),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            const data = await newEvent.json();
+            if (!newEvent.ok) {
+                const { message } = data;
+                const errorsContainer = document.querySelector('#errors-container');
+                // there isn't actually an errors container on this page,
+                // so we may want to take this out
+                // errorsContainer.innerHTML = message;
+                return;
             }
-        });
-        const data = await newEvent.json();
-        if (!newEvent.ok) {
-            const { message } = data;
-            const errorsContainer = document.querySelector('#errors-container');
-            // there isn't actually an errors container on this page,
-            // so we may want to take this out
-            errorsContainer.innerHTML = message;
+            populateEventsList();
+            return;
+        } else {
+            // unrsvp them
+            const body = {eventId, userId}
+            const res = await fetch('/api/rsvps/', {
+                method: "DELETE",
+                body: JSON.stringify(body),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            populateEventsList();
             return;
         }
-        populateEventsList();
-        return;
+
     };
 
 });
