@@ -11,14 +11,13 @@ block content
     include include/header.pug
     div#form-container
       form#login-form
-        h1 Hey buddy!
+        h1 HHey buddy!
         h2 It's good to have you back. Sign in here and sign up for your next boba time!
         ul#errors-container
         input(type="hidden" name="_csrf" value=csrf)
         +authInput("text", "emailAddress", "Email Address")
         +authInput("password", "password", "Password")
-        button(id="submit-button" type="submit") Sign in
-        button(id="demo-button" type="demo") Demo User
+        button(type="submit") Sign in
         div.create-account
           a.link-to-other-form(href="/signup") Haven't been here before? Sign up and introduce yourself.
-    include include/footer.pug
+ter.pug
