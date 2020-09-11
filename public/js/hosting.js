@@ -66,7 +66,7 @@ form.addEventListener('submit', async (e) => {
       return;
   }
   // redirect to newly created event
-  // window.location.href = `/boba-times/${}`;
+  window.location.href = `/boba-times/${data.newEvent.id}`;
 
 
 
