@@ -71,13 +71,12 @@ As a user, I want to be able to create new events to host. I should be able to c
 
 ### Goals
 #### Acceptance criteria
-- [ ] Create event page (`/hosting`) lets you create a new event
+- [x] Create event page (`/hosting`) lets you create a new event
 - Users must provide
-    - [ ] an event name
-    - [ ] a city (from a dropdown list that includes only the cities in our database)
-    - [ ] an address (as a string)
-    - [ ] a time and date
-- [ ] Successful POST would redirect the user to the /events/:id event detail page for the newly created event
+    - [x] a city (from a dropdown list that includes only the cities in our database)
+    - [x] an address (as a string)
+    - [x] a time and date
+- [x] Successful POST would redirect the user to the `/boba-times/:id` event detail page for the newly created event
 - [ ] Failure to provide a required field would load a list of applicable error messages
 
 ## User dashboard
