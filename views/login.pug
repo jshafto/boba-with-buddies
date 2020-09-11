@@ -3,12 +3,12 @@ extends layout.pug
 include include/auth-input.pug
 
 append head
+  script(src="/public/js/login.js" type="module" defer)
   link(rel="stylesheet" href="/public/css/auth.css")
-//-   script(src="/public/js/login.js" type="module" defer)
 
 block content
   div#parent
-    include includes/header.pug
+    include include/header.pug
     div#form-container
       form#login-form
         h1 Hey friend!
