@@ -104,6 +104,7 @@ div#body-container {
     height: auto;
     display: flex;
     padding-top: 30px;
+    padding-bottom: 50px;
 }
 
 h1 {
@@ -119,8 +120,8 @@ h2 {
 }
 
 div.boba-times {
-    display: block;
-    float: right;
+    display: flex;
+    
 }
 
 .left-container {
