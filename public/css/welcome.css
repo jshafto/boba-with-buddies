@@ -1,5 +1,6 @@
 
 #header {
+    font-family: "Nanum Pen Script";
     display: block;
     background-color: #F7BF4D;
     color: #FEFEFE;
@@ -43,7 +44,7 @@ a.header-link {
     vertical-align: top;
 }
 
-button#signup {
+button#signup, button#signout {
     padding: 9px 18px;
     background-color: #FEFEFE;
     border: 2px solid #FEFEFE;

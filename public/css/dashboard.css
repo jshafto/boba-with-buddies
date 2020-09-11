@@ -50,7 +50,9 @@ button#signup, button#signout {
     border: 2px solid #FEFEFE;
     border-radius: 3px;
     color: #F7BF4D;
+
 }
+
 
 /* the above is the styling for include/header.pug */
 
@@ -58,53 +60,33 @@ button#signup, button#signout {
     background-color: #F7BF4D;
 }
 
-h1 {
-    font-weight: bold;
-    margin: 0;
-    font-size: 1.5em;
-    text-align: left;
-    margin-top:30px;
-    margin-bottom: 10px;
-    color: #EF6236;
+div.nav-container {
+    background-color: bisque;
 }
 
-h2 {
+div.nav {
+    margin-left: auto;
     display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-size: 18px;
-    line-height: 1.625;
-    text-align: left;
-}
-
-#form-container {
-    background-color: #faf6e8;
-}
-
-#login-form, #signup-form {
-    text-align: center;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    background-color: #faf6e8;
     max-width: 1020px;
     margin-left: auto;
     margin-right: auto;
 }
 
-input {
-    display: block;
-    margin: 0 0 0.8125em 0;
-    padding: 1em;
-    width: 100%;
-    border-radius: 3px;
-    box-shadow: none;
-    border: 1px solid #DDD;
+div.nav-text {
+    background-color: bisque;
+    padding: 20px;
+    padding-left: 0px;
+
 }
 
-button[type='submit'] {
+div.nav-text > text {
+    padding-right: 10px;
+    padding-left: 0px;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+button#boba-time-signup {
     background-color: #EF6236;
     border: 2px solid #EF6236;
     border-radius: 10px;
@@ -117,35 +99,93 @@ button[type='submit'] {
     margin-top: 1em;
 }
 
-button[type='demo'] {
-    background-color: #EF6236;
-    border: 2px solid #EF6236;
-    border-radius: 10px;
-    display: inline-block;
+div#body-container {
+    background-color: #faf6e8;
+    height: 500px;
+    display: flex;
+    padding-top: 30px;
+}
+
+h1 {
+    font-size: 2em;
     font-weight: bold;
-    color:white;
-    font-size: 18px;
-    padding: 1em;
-    letter-spacing: 2px;
-    margin-top: 1em;
-}
-
-div.create-account  {
-    margin-top: 20px;
-    font-size: 18px;
-}
-
-div.existing-account  {
-    margin-top: 20px;
-    font-size: 18px;
-}
-
-a.link-to-other-form{
     color: #EF6236;
-    font-size: 18px;
-    margin-left: 5px;
-    line-height: 1.625;
+    margin-bottom: 18px;
 }
+
+h2 {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+div.boba-times {
+    display: block;
+    float: right;
+}
+
+.left-container {
+    float: left;
+    display: block;
+    margin-left: auto;
+    margin-right: 10%;
+}
+
+.boba-times {
+    margin-right: auto;
+}
+
+.headline-joined {
+    font-size: 2em;
+    font-weight: bold;
+    color: #EF6236;
+    margin-bottom: 18px;
+}
+
+/* .event-container-joined {
+    text-align: center;
+    display: block;
+    border: 2px solid black;
+} */
+
+#join-new-boba-time-container{
+    display: block;
+    border: 1px dashed black;
+    float: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#join-new-boba-time {
+    text-align: center;
+}
+
+.headline-hosted {
+    font-size: 2em;
+    font-weight: bold;
+    color: #EF6236;
+    margin-bottom: 18px;
+}
+
+.event-box {
+    text-align: center;
+    display: block;
+    border: 1px solid black;
+}
+
+#host-new-boba-time-container {
+    display: block;
+    border: 1px dashed black;
+    float: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#host-new-boba-time {
+    text-align: center;
+}
+
+
+
 
 /* the below is the styling for include/footer.pug */
 
