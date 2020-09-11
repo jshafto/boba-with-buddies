@@ -57,7 +57,7 @@ formDemo.addEventListener('submit', async (e) => {
     });
     const data = await res.json();
     if (!res.ok) {
-        console.log('whats wrong')
+
         const { message } = data;
         const errorsContainer = document.querySelector('#errors-container');
         errorsContainer.innerHTML = message;
