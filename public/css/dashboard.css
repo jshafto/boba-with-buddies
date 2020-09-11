@@ -1,60 +1,4 @@
 
-#header {
-    font-family: "Nanum Pen Script";
-    display: block;
-    background-color: #F7BF4D;
-    color: #FEFEFE;
-    font-size: 2em;
-    font-weight: 400;
-    height: 50px;
-    max-width: 1020px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-div.logo > a {
-    float: left;
-    font-weight: bold;
-    line-height: 2;
-    font-size: 25px;
-    color: #FEFEFE;
-}
-
-div.wrapper-nav {
-    float: right;
-    justify-content: right;
-    color: #FEFEFE;
-    margin-top: 5px;
-}
-
-div.wrapper-nav > button{
-    margin-left: 15px;
-    outline: 0;
-}
-
-a.header-link {
-    margin-left: 15px;
-    margin-right: 15px;
-}
-
-.logo {
-    float:left;
-    font-size: 30px;
-    font-weight: bolder ;
-    vertical-align: top;
-}
-
-button#signup, button#signout {
-    padding: 9px 18px;
-    background-color: #FEFEFE;
-    border: 2px solid #FEFEFE;
-    border-radius: 3px;
-    color: #F7BF4D;
-
-}
-
-
-/* the above is the styling for include/header.pug */
 
 #parent {
     background-color: #F7BF4D;
@@ -121,7 +65,8 @@ h2 {
 
 div.boba-times {
     display: flex;
-    
+    margin-right:auto;
+
 }
 
 .left-container {
@@ -131,9 +76,7 @@ div.boba-times {
     margin-right: 10%;
 }
 
-.boba-times {
-    margin-right: auto;
-}
+
 
 .headline-joined {
     font-size: 2em;
@@ -141,7 +84,12 @@ div.boba-times {
     color: #EF6236;
     margin-bottom: 18px;
 }
-
+.headline-hosted {
+    font-size: 2em;
+    font-weight: bold;
+    color: #EF6236;
+    margin-bottom: 18px;
+}
 /* .event-container-joined {
     text-align: center;
     display: block;
@@ -154,17 +102,15 @@ div.boba-times {
     float: center;
     margin-top: 10px;
     margin-bottom: 10px;
+    
 }
 
 #join-new-boba-time {
     text-align: center;
 }
 
-.headline-hosted {
-    font-size: 2em;
-    font-weight: bold;
-    color: #EF6236;
-    margin-bottom: 18px;
+.joined {
+    margin-right:60px;
 }
 
 .event-box {

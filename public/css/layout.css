@@ -1,0 +1,55 @@
+
+#header {
+    font-family: "Nanum Pen Script";
+    display: block;
+    background-color: #F7BF4D;
+    color: #FEFEFE;
+    font-size: 2em;
+    font-weight: 400;
+    height: 50px;
+    max-width: auto;
+    padding-left: 250px;
+    padding-right: 250px;
+}
+
+div.logo > a {
+    float: left;
+    font-weight: bold;
+    line-height: 2;
+    font-size: 25px;
+    color: #FEFEFE;
+}
+
+div.wrapper-nav {
+    float: right;
+    justify-content: right;
+    color: #FEFEFE;
+    margin-top: 5px;
+}
+
+div.wrapper-nav > button{
+    margin-left: 15px;
+    outline: 0;
+}
+
+a.header-link {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.logo {
+    float:left;
+    font-size: 30px;
+    font-weight: bolder ;
+    vertical-align: top;
+}
+
+button#signup, button#signout {
+    padding: 9px 18px;
+    background-color: #FEFEFE;
+    border: 2px solid #FEFEFE;
+    border-radius: 3px;
+    color: #F7BF4D;
+
+}
+
