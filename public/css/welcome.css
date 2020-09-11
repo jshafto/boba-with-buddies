@@ -1,7 +1,8 @@
 
 #header {
+    font-family: "Nanum Pen Script";
     display: block;
-    background-color: #fcda7f;
+    background-color: #F7BF4D;
     color: #FEFEFE;
     font-size: 2em;
     font-weight: 400;
@@ -43,19 +44,21 @@ a.header-link {
     vertical-align: top;
 }
 
-button#signup {
+button#signup, button#signout {
     padding: 9px 18px;
     background-color: #FEFEFE;
     border: 2px solid #FEFEFE;
     border-radius: 3px;
     color: #F7BF4D;
+
 }
 
 /* the above is the styling for include/header.pug */
 
 
+
 #parent {
-    background-color: #fcda7f;
+    background-color: #F7BF4D;
 }
 
 div#description-wrapper {
@@ -213,7 +216,7 @@ text.body-subheading {
 div#footer {
     display: block;
     color: #FEFEFE;
-    background-color: #fcda7f;
+    background-color: #F7BF4D;
     overflow: auto;
     padding: 2em 0;
     font-size: 18px;
