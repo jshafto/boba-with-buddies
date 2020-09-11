@@ -29,4 +29,7 @@ form.addEventListener('submit', async (e) => {
     }
     // redirect to dashboard
     window.location.href = '/dashboard';
+
+
+
 });

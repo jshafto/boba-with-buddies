@@ -17,7 +17,8 @@ block content
         input(type="hidden" name="_csrf" value=csrf)
         +authInput("text", "emailAddress", "Email Address")
         +authInput("password", "password", "Password")
-        button(type="submit") Sign in
+        button(id="submit-button" type="submit") Sign in
+        button(id="demo-button" type="demo") Demo User
         div.create-account
           a.link-to-other-form(href="/signup") Haven't been here before? Sign up and introduce yourself.
     include include/footer.pug
