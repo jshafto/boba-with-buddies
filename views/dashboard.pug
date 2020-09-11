@@ -1,7 +1,27 @@
 extends layout.pug
 
+append head
+    script(src="/public/js/dashboard.js" type="module" defer)
+
 block content
     div#parent
         include include/header.pug
-        h1 Welcome, #{nickname}
+        .left-container
+            h1 Welcome home, #{nickname}!
+            h2 What are you looking forward to today?
+            a(href="/boba-times")
+                button SIGN UP FOR BOBA TIME
+        .boba-times
+            .joined
+                .headline-joined Boba times you're attending.
+                .event-container-joined
+                a(href="/boba-times")
+                    div +
+                    div JOIN A BOBA TIME
+            .hosted
+                .headline-hosted Boba times you're hosting.
+                .event-container-hosted
+                a(href="/hosting")
+                    div +
+                    div HOST A BOBA TIME
         include include/footer.pug
