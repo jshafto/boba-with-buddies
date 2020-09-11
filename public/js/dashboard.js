@@ -45,7 +45,6 @@ const populate = (events, container) => {
     const time = event.date.split('T')[1].split(':').map(el=> parseInt(el)).slice(0, 2)
     if (time[0]>12) time[0]-=12;
     const timeString = time.join(':');
-    console.log(event);
     html += `
     <div class="event-box">
       <div class="date-box">${dateString}</div>

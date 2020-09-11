@@ -11,7 +11,7 @@ As a registered user, I want to be able to log in.
 - [x] If a user enters an invalid email / password, they receive a general message that there was a login error
 - [x] If a user enters the wrong password, they receive a general message that there was a login error
 - [x] Refreshing the page after login maintains the user session
-- [ ] User can log out to end the session
+- [x] User can log out to end the session
 
 ## Sign up page
 ### User Story:
@@ -40,7 +40,7 @@ As a visitor to the website, I should be able to view all of the cities where ev
 #### Stretch goals
 - [ ] Include a description of each city
 - [ ] Include a picture for each city
-- [ ] A map is featured of the city
+- [x] A map is featured of the city
 - [ ] Map contains pins for each of the events
 
 
@@ -50,16 +50,16 @@ As a user I want to be able to RSVP to an event, so that I can keep track of eve
 
 ### Goals
 #### Acceptance criteria
-- [ ] Event detail page is located at `/boba_times/:id`
-- [ ] Event detail page has all of details about an event in one place
+- [x] Event detail page is located at `/boba_times/:id`
+- [x] Event detail page has all of details about an event in one place
     - the date/time
     - the location
     - the host
     - the number of attendees
-- [ ] Page includes a button that will allow the user to RSVP to the event
+- [x] Page includes a button that will allow the user to RSVP to the event
 
 #### Stretch goals
-- [ ] Add an event name and description
+- [ ] Add an event name and description to the event model and the detail page
 - [ ] Event detail page will indicate whether or not a user is already attending the event, and if so the join button will go away
 - [ ] A "Cancel RSVP" button will be available to users who are already attending the event
 - [ ] A "Cancel Event" button will be available to the host of the event
@@ -71,7 +71,7 @@ As a user, I want to be able to create new events to host. I should be able to c
 
 ### Goals
 #### Acceptance criteria
-- [ ] Create event page lets you create a new event
+- [ ] Create event page (`/hosting`) lets you create a new event
 - Users must provide
     - [ ] an event name
     - [ ] a city (from a dropdown list that includes only the cities in our database)
@@ -85,17 +85,18 @@ As a user, I want to be able to create new events to host. I should be able to c
 As a user, I want to be able to view all my account details and all of my events (the ones I'm hosting, and the ones I'm attending) in one place.
 ### Goals
 #### Acceptance criteria
-- [ ] The `/dashboard` page would allow a user to view their account details and upcoming events
+- [x] The `/dashboard` page would allow a user to view their account details and upcoming events
 - [x] Dashboard greets user with nickname
-- [ ] Dashboard contains a column with a list of all events the user has RSVP’d to
-- [ ] Dashboard contains a column with a list of all events a user is hosting
-- [ ] Each event item in both columns includes a link to the event detail page
-- [ ] Dashboard contains a button that says “Join an event” which takes the user to the `/boba-times` page
-- [ ] Dashboard contains a button that says “Host a new event” which takes a user to the `/hosting` page
+- [x] Dashboard contains a column with a list of all events the user has RSVP’d to
+- [x] Dashboard contains a column with a list of all events a user is hosting
+- [x] Each event item in both columns includes a link to the event detail page
+- [x] Dashboard contains a button that says “Join an event” which takes the user to the `/boba-times` page
+- [x] Dashboard contains a button that says “Host a new event” which takes a user to the `/hosting` page
 
 #### Stretch goals
 - [ ] Serves a random “inspirational” quote to user
 - [ ] Separate past and future events (event history)
+- [ ] Edit user profile
 
 
 
@@ -136,7 +137,7 @@ As a user, I want to be able to view all my account details and all of my events
     - GET `/api/cities/:id`
     - GET `/api/events/:id`
     - POST `/api/events/` (creates a new event with user as host)
-    - POST `/api/rsvps/:id` (to add an rsvp between a given user and event)
+    - POST `/api/rsvps/:` (to add an rsvp between a given user and event)
     - POST `/api/users` (creates new user account)
     - POST `/api/users/token` (signs in existing user)
 

@@ -39,7 +39,9 @@ const getUser = () => {
 
 
 const getEvents = async () => {
-    const id = parseInt(document.querySelector(".whichevent").id, 10);
+    // this is a shit hack cause i couldn't get the regex to work. sue me.
+    const id = parseInt(window.location.href.split('/').filter(item => item).reverse()[0]);
+    // const id = parseInt(document.querySelector(".whichevent").id, 10);
 
     const res = await fetch(`/api/events/${id}`);
     const data = await res.json();
@@ -66,7 +68,7 @@ const populateEventsList = async () => {
                 <div class="event-image">
                     <img src="/public/images/coffee_6.png">
                 </div>
-                <button class='event__button' id='${event.id}'>JOIN ${hostName} FOR BOBA</button>
+                JOIN ${hostName} FOR BOBA
             </div>
             <div class="event-body">
                 <p> &#128197: ${dateString}</p>
@@ -77,6 +79,9 @@ const populateEventsList = async () => {
             </div>
             <div class"event-footer">
                 BOBA-BUDDIES CURRENTLY ATTENDING: ${numAttendees}
+            </div>
+            <div>
+                <button class='event__button' id='${event.id}'>SIGN ME UP</button>
             </div>
         </div>
     `;
@@ -91,11 +96,10 @@ document.addEventListener('click', async (e) => {
     if(e.target.classList.contains('event__button')){
         const eventId = e.target.id
         const user = getUser()
-        // console.log(user)
-        // if (!user) {
-        //     window.location.href = '/signup'
-        //     return;
-        // }
+        if (!user) {
+            window.location.href = '/signup'
+            return;
+        }
         const userId = user.data.id
         const body = {eventId, userId}
         const newEvent = await fetch('/api/rsvps/', {
@@ -106,14 +110,14 @@ document.addEventListener('click', async (e) => {
             }
         });
         const data = await newEvent.json();
+        console.log(newEvent)
         if (!newEvent.ok) {
             const { message } = data;
             const errorsContainer = document.querySelector('#errors-container');
             errorsContainer.innerHTML = message;
             return;
         }
-        // console.log(newEvent)
-        window.location.href = '/boba-times';
+        populateEventsList();
         return;
     };
 
