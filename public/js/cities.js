@@ -18,7 +18,7 @@ const createCityLi = async (city) => {
 
 const populateCities = async () => {
     const citiesDiv = document.querySelector('.cities')
-    console.log(citiesDiv)
+    // console.log(citiesDiv)
     const {cities} = await getCities()
     
     for(let city of cities){
