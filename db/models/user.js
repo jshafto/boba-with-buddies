@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       User.hasMany(models.Event, {
         as: 'hostedEvents',
-        foreignKey: "hostId"
+        foreignKey: "hostId",
+        onDelete: 'cascade'
       })
       User.belongsToMany(models.Event, {
         through: models.Rsvp,

@@ -13,7 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       // it seems like we need to alias one of the
       Event.belongsTo(models.User, {
         as: "host",
-        foreignKey: "hostId"
+        foreignKey: "hostId",
+        onDelete: 'cascade'
       })
       Event.belongsTo(models.City, {foreignKey: "cityId"})
       //! Events belongs to Users in Two ways
