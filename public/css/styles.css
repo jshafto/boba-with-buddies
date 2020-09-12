@@ -1,0 +1,39 @@
+
+
+html {
+  font-family: "Rubik", "Helvetica Neue", sans-serif;
+}
+
+#header {
+  background: rgba(247,191,77,0.87);
+  position: relative;
+  height: 76px;
+  display: flex;
+}
+
+.header__container {
+  width: 80%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo__image {
+  width: 32px;
+  height: 32px;
+}
+
+.logo__group {
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  font-family: 'Nanum Pen Script', cursive;
+}

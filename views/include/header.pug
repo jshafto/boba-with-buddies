@@ -1,8 +1,12 @@
 div#header
-    div.logo
-        a(href="/") Boba With Buddies
-    div.wrapper-nav
-        a(class='header-link' href='/boba-times') BOBA TIMES
-        a(class='header-link' href='https://medium.com/tea-with-strangers/apply-to-be-a-tea-with-strangers-host-9ca06937fbd7') HOSTING
-        button#signup
-            a(href='/signup') SIGN UP
+    div.header__container
+        div.logo
+            a(href="/")
+                .logo__group
+                    img(src="/public/images/boba-logo-white.png" alt="Logo navbar" class="logo__image")
+                    span Boba With Buddies
+        div.wrapper-nav
+            a(class='header-link' href='/boba-times') BOBA TIMES
+            a(class='header-link' href='https://medium.com/tea-with-strangers/apply-to-be-a-tea-with-strangers-host-9ca06937fbd7') HOSTING
+            button#signup
+                a(href='/signup') SIGN UP
