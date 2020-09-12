@@ -54,5 +54,10 @@ function initMap() {
             title: city.location,
             animation: google.maps.Animation.DROP
         });
+        marker.addListener('click', function () {
+            map.setZoom(10);
+            map.setCenter(marker.getPosition());
+        });
+
     });
 }
