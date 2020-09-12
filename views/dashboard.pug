@@ -2,7 +2,7 @@ extends layout.pug
 
 append head
     script(src="/public/js/dashboard.js" type="module" defer)
-    link(rel="stylesheet" href="/public/css/dashboard.css")
+    //- link(rel="stylesheet" href="/public/css/dashboard.css")
 
 block content
   div#parent
@@ -25,13 +25,13 @@ block content
                 .event-container-joined
                 #join-new-boba-time-container
                     a(id='join-new-boba-time' href="/boba-times")
-                        div +
+                        .plus +
                         div JOIN A BOBA TIME
             .hosted
                 .headline-hosted Boba times you're hosting.
                 .event-container-hosted
                 #host-new-boba-time-container
                     a(id='host-new-boba-time' href="/hosting")
-                        div +
+                        .plus +
                         div HOST A BOBA TIME
     include include/footer.pug

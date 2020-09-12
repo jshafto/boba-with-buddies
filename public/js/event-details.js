@@ -92,7 +92,7 @@ const populateEventsList = async () => {
                 <p> &#128506: ${event.City.name}</p>
                 <p> &#128483: <a href="${url}">${url}</a></p>
             </div>
-            <div class"event-footer">
+            <div class="event-footer">
                 BOBA-BUDDIES CURRENTLY ATTENDING: ${numAttendees}
             </div>
             <div>

@@ -25,6 +25,15 @@ h2 {
     text-align: left;
 }
 
+/* #login-form,
+#signup-form,
+{
+    width: 360px;
+    padding: 44px 56px;
+    margin: 0 auto;
+
+} */
+
 #form-container {
     background-color: #faf6e8;
     padding-bottom: 50px;
@@ -42,6 +51,9 @@ h2 {
     max-width: 1020px;
     margin-left: auto;
     margin-right: auto;
+    width: 360px;
+    padding: 44px 56px;
+    margin: 0 auto;
 }
 
 input {

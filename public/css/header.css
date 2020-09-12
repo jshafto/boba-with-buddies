@@ -1,6 +1,6 @@
 
 #header {
-    font-family: "Nanum Pen Script";
+    font-family: "Rubik", "Helvetica Neue", sans-serif;
     display: block;
     background-color: #F7BF4D;
     color: #FEFEFE;
@@ -13,6 +13,7 @@
 }
 
 div.logo > a {
+    font-family: 'Nanum Pen Script', cursive;
     float: left;
     font-weight: bold;
     line-height: 2;
@@ -52,4 +53,3 @@ button#signup, button#signout {
     color: #F7BF4D;
 
 }
-

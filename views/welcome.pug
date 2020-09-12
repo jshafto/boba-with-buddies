@@ -1,8 +1,8 @@
 extends layout.pug
 
 append head
-  link(rel="stylesheet" href="/public/css/welcome.css")
-  
+  //- link(rel="stylesheet" href="/public/css/welcome.css")
+
 
 block content
   div#parent
@@ -11,33 +11,34 @@ block content
       div#description
         h1 Everyone is interesting
         h2 But you don't discover that when you're staring at a screen.
-      button#boba-time-button
-        a(href='/boba-times') LET'S GET BOBA
-    div#slogan
-      div.qualities
-        text.qualities-heading Show up for bubble-tea time
-        text.qualities-subheading You and a few others join a host at a cafe.
-      div.qualities
-        text.qualities-heading Have a real conversation
-        text.qualities-subheading You talk for two hours about anything.
-      div.qualities
-        text.qualities-heading See what happens
-        text.qualities-subheading That's it. No strings attached.
+        button#boba-time-button
+          a(href='/boba-times') LET'S GET BOBA
+    div.slogan-container
+      div#slogan
+        div.qualities
+          text.qualities-heading Show up for bubble-tea
+          text.qualities-subheading You and a few others join a host at a cafe.
+        div.qualities
+          text.qualities-heading Have a real conversation
+          text.qualities-subheading You talk for two hours about anything.
+        div.qualities
+          text.qualities-heading See what happens
+          text.qualities-subheading That's it. No strings attached.
     div#body
       div#body-question SO WHY ARE THOUSANDS OF PEOPLE DOING IT?
       div.body-part
-        img(src="../public/images/welcome-pic-1.png")
         div.body-text
           text.body-heading It's weird.
           text.body-subheading Everyone at boba time is stepping a little out of their comfort zone. This makes it so much easier to actually learn something unexpected about the people around you. Because open minds are a prerequisite around here.
+        img(class="body-part__image" src="../public/images/boba.jpg")
       div.body-part
         img(src="../public/images/welcome-pic-2.png")
         div.body-text
           text.body-heading We won't meet otherwise.
           text.body-subheading In all likelihood, our paths won’t cross for any reason. So often, we only meet people through work, school, or friends of friends. And even then, it’s questionable. So basically, we manufacture serendipity
       div.body-part
-        img(src="../public/images/welcome-pic-3.png")
         div.body-text
           text.body-heading Your hands are made for high fiving!
           text.body-subheading And your eyes are made…for eye contact! Real humans are so much cooler than their tweets or Instagram pictures. Boba time has real humans! #nofilter!
+        img(src="../public/images/welcome-pic-3.png")
     include include/footer.pug

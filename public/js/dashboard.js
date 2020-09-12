@@ -52,7 +52,7 @@ const populate = (events, container) => {
     const user = getUser()
     const userId = user.data.id
     const timeString = time.join(':')+ timeEnd;
-    
+
     if (userId !== event.host.id) {
       html += `
       <div class="event-box">
@@ -139,7 +139,7 @@ document.addEventListener('click', async (e) => {
         "Content-Type": "application/json"
       }
     });
-    window.location.href = '/dashboard'
+    populateContainers();
 }})
 
 //cancel event
@@ -155,5 +155,5 @@ document.addEventListener('click', async (e) => {
     const res = await fetch(`/api/events/${eventId}`, {
       method: "DELETE"
     });
-    window.location.href = '/dashboard'
+    populateContainers();
 }})
