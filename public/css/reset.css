@@ -27,11 +27,11 @@ ul, ol {
 
 body {
     background-color:  #FFFFFF;
- }
+}
 
- #login-form, #signup-form {
+#login-form, #signup-form {
     width: 360px;
     padding: 44px 56px;
     margin: 0 auto;
 
- }
+}
