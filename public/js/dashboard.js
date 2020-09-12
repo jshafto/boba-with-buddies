@@ -48,7 +48,9 @@ const populate = (events, container) => {
     if (time[0]>=12) {
       time[0]-=12;
       timeEnd = ' PM'
-    };const userId = user.data.id
+    };
+    const user = getUser()
+    const userId = user.data.id
     const timeString = time.join(':')+ timeEnd;
     html += `
     <div class="event-box">
