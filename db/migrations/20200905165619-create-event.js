@@ -21,12 +21,14 @@ module.exports = {
       hostId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: { model: "Users" }
+        references: { model: "Users" },
+        onDelete: 'cascade'
       },
       cityId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: { model: "Cities" }
+        references: { model: "Cities" },
+        onDelete: 'cascade'
       },
       createdAt: {
         allowNull: false,
