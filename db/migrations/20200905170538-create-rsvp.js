@@ -11,12 +11,14 @@ module.exports = {
       userId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: { model: "Users" }
+        references: { model: "Users" },
+        onDelete: 'cascade'
       },
       eventId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: { model: "Events" }
+        references: { model: "Events" },
+        onDelete: 'cascade'
       },
       createdAt: {
         allowNull: false,

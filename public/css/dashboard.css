@@ -120,7 +120,7 @@ div.boba-times {
     float: center;
     margin-top: 10px;
     margin-bottom: 10px;
-    height: 200px;
+    height: 160px;
 }
 
 #host-new-boba-time {
@@ -136,7 +136,7 @@ div.boba-times {
 .time-box,
 .address-box,
 .hostname-box {
-    font-size: 35px;
+    font-size: 25px;
 }
 
 .hostname-box {
@@ -145,7 +145,7 @@ div.boba-times {
     box-sizing: border-box;
     margin: 0 20px;
 }
-
+.hostEvent__button,
 .event__button {
     width: 100%;
     font-size: 20px;
@@ -157,7 +157,7 @@ div.boba-times {
     cursor:pointer;
     border-radius: 5px;
 }
-
+.hostEvent__button:hover,
 .event__button:hover {
     background-color: #F7BF4D;
     color: white;

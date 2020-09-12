@@ -1,17 +1,45 @@
 'use strict';
 
 const db = require('../models');
-const { User, Event } = db;
+const { User, City, Event } = db;
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     const demoUser = await User.findOne({ where: {emailAddress: 'boba@demo.com'}});
+    
+    
     const someUser1 = await User.findOne({order: [[Sequelize.fn('RANDOM')]]});
     const someUser2 = await User.findOne({order: [[Sequelize.fn('RANDOM')]]});
     const someUser3 = await User.findOne({order: [[Sequelize.fn('RANDOM')]]});
     const someUser4 = await User.findOne({order: [[Sequelize.fn('RANDOM')]]});
     const someUser5 = await User.findOne({order: [[Sequelize.fn('RANDOM')]]});
     const someUser6 = await User.findOne({order: [[Sequelize.fn('RANDOM')]]});
+    
+    
+    const sanFran = await City.findOne({
+      order: [
+        [Sequelize.fn('RANDOM')]
+      ], 
+      where: {
+        name: 'San Francisco'
+      }
+    })
+    
+    const demoEvent = await Event.findOne({
+      where: {
+        cityId: sanFran.id
+      }
+    })
+    const demoEvent2 = await Event.findOne({
+      where: {
+        cityId: sanFran.id
+      }
+    })
+    const demoEvent3 = await Event.findOne({
+      where: {
+        cityId: sanFran.id
+      }
+    })
     
     const someEvent1 = await Event.findOne({order: [[Sequelize.fn('RANDOM')]]});
     const someEvent2 = await Event.findOne({order: [[Sequelize.fn('RANDOM')]]});
@@ -25,7 +53,13 @@ module.exports = {
     
     
     
+    
     await queryInterface.bulkInsert('Rsvps', [
+      
+      { userId: demoUser.id, eventId: demoEvent.id, createdAt: new Date(), updatedAt: new Date() },
+      { userId: demoUser.id, eventId: demoEvent2.id, createdAt: new Date(), updatedAt: new Date() },
+      { userId: demoUser.id, eventId: demoEvent3.id, createdAt: new Date(), updatedAt: new Date() },
+      
       { userId: someUser1.id, eventId: someEvent1.id, createdAt: new Date(), updatedAt: new Date() },
       { userId: someUser2.id, eventId: someEvent1.id, createdAt: new Date(), updatedAt: new Date() },
       { userId: someUser3.id, eventId: someEvent1.id, createdAt: new Date(), updatedAt: new Date() },
