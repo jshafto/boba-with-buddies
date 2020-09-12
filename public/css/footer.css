@@ -1,0 +1,40 @@
+
+div#footer {
+    display: block;
+    color: #FEFEFE;
+    background-color: #F7BF4D;
+    overflow: auto;
+    padding: 2em 0;
+    font-size: 18px;
+    line-height: 1.625;
+}
+
+div#footer-container {
+    display: block;
+    box-sizing: border-box;
+    padding: 0 1em;
+    max-width: 1020px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    line-height: 1.625;
+}
+
+div#footer-links {
+    float: left;
+    display: block;
+    margin-right: 2.8425860857%;
+    width: 28.01018974%;
+    font-weight: bold;
+    margin-bottom: 1.5em;
+    font-size: 18px;
+    line-height: 1.625;
+}
+
+div#footer-ethos {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}

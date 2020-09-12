@@ -70,10 +70,9 @@ div.boba-times {
 }
 
 .left-container {
-    float: left;
-    display: block;
-    margin-left: auto;
-    margin-right: 10%;
+
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 
@@ -90,20 +89,6 @@ div.boba-times {
     color: #EF6236;
     margin-bottom: 18px;
 }
-/* .event-container-joined {
-    text-align: center;
-    display: block;
-    border: 2px solid black;
-} */
-
-#join-new-boba-time-container{
-    display: block;
-    border: 1px dashed black;
-    float: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    
-}
 
 #join-new-boba-time {
     text-align: center;
@@ -116,62 +101,65 @@ div.boba-times {
 .event-box {
     text-align: center;
     display: block;
-    border: 1px solid black;
+    border: 1px solid lightgray;
+    background-color: white;
+    box-shadow: 5px 5px 20px 1px #c4c3c3;
+    border-radius: 5px;
+    margin: 20px 0px;
+    height: auto;
+    padding: 10px 0px 0px 0px;
+    box-sizing: border-box;
+    
+    
+    
 }
-
+#join-new-boba-time-container,
 #host-new-boba-time-container {
     display: block;
     border: 1px dashed black;
     float: center;
     margin-top: 10px;
     margin-bottom: 10px;
+    height: 200px;
 }
 
 #host-new-boba-time {
     text-align: center;
 }
 
-
-
-
-/* the below is the styling for include/footer.pug */
-
-div#footer {
-    display: block;
-    color: #FEFEFE;
-    background-color: #F7BF4D;
-    overflow: auto;
-    padding: 2em 0;
-    font-size: 18px;
-    line-height: 1.625;
+.date-box,
+.address-box {
+    color: grey;
 }
 
-div#footer-container {
-    display: block;
+.date-box,
+.time-box,
+.address-box,
+.hostname-box {
+    font-size: 35px;
+}
+
+.hostname-box {
+    padding-bottom: 10px;
+    border-top: 1px solid black;
     box-sizing: border-box;
-    padding: 0 1em;
-    max-width: 1020px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 18px;
-    line-height: 1.625;
+    margin: 0 20px;
 }
 
-div#footer-links {
-    float: left;
-    display: block;
-    margin-right: 2.8425860857%;
-    width: 28.01018974%;
+.event__button {
+    width: 100%;
+    font-size: 20px;
+    height: 50px;
+    background-color: rgba(253, 227, 167, 1);
     font-weight: bold;
-    margin-bottom: 1.5em;
-    font-size: 18px;
-    line-height: 1.625;
+    color: #F7BF4D;
+    border:1px solid orange;
+    cursor:pointer;
+    border-radius: 5px;
 }
 
-div#footer-ethos {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+.event__button:hover {
+    background-color: #F7BF4D;
+    color: white;
+    font-weight: bolder;
 }
