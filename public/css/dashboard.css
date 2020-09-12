@@ -155,6 +155,7 @@ div.boba-times {
     color: #F7BF4D;
     border:1px solid orange;
     cursor:pointer;
+    border-radius: 5px;
 }
 
 .event__button:hover {
