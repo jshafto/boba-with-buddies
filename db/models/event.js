@@ -20,7 +20,8 @@ module.exports = (sequelize, DataTypes) => {
       Event.belongsToMany(models.User, {
         through: models.Rsvp,
         otherKey: 'userId',
-        foreignKey: 'eventId'
+        foreignKey: 'eventId',
+        onDelete: 'cascade'
       })
     }
   };
