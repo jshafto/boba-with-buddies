@@ -5,10 +5,11 @@ html {
 }
 
 #header {
-  background: rgba(247,191,77,0.87);
+  background: #F8C865;
   position: relative;
   height: 76px;
   display: flex;
+  color: white;
 }
 
 .header__container {
@@ -26,14 +27,70 @@ html {
   align-items: center;
 }
 
-.logo__image {
-  width: 32px;
-  height: 32px;
-}
-
 .logo__group {
+  font-weight: bold;
   display: flex;
   align-items: center;
   font-size: 32px;
   font-family: 'Nanum Pen Script', cursive;
+}
+
+
+.logo__image {
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+  padding-bottom: 5px;
+}
+
+.wrapper-nav {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button#signin,
+button#signup {
+  color:#F8C865;
+  background-color: white;
+  border-radius: 4px;
+  padding: 10px 15px;
+
+}
+#description-wrapper {
+  background-image: url('../images/topheader.png');
+  height: 500px;
+  color: white;
+
+}
+
+
+#description {
+  text-align: center;
+  margin: 0 auto;
+  width: 500px;
+
+}
+
+#description>h1 {
+  font-size: 32px;
+
+}
+
+#description>h2 {
+  font-size: 24px;
+
+}
+
+button#boba-time-button {
+  background-color: #EF6236;
+  border-radius: 10px;
+  color: #FEFEFE;
+  font-weight: bold;
+  font-size: 18px;
+  padding: .5em 1.5em;
+  letter-spacing: 2px;
+  line-height: 5px;
+  height: 50px;
 }
