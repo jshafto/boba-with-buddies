@@ -52,12 +52,30 @@ const populate = (events, container) => {
     const user = getUser()
     const userId = user.data.id
     const timeString = time.join(':')+ timeEnd;
+    
+    if (userId !== event.host.id) {
+      html += `
+      <div class="event-box">
+        <div class="date-box">${dateString}</div>
+        <div class="time-box">${timeString}</div>
+        <div class="address-box">${event.address}</div>
+        <div class="hostname-box">Hosted by: ${host}</div>
+        <div>
+          <button class='event__button' id='${event.id}'>CANCEL MY RSVP</button>
+        </div>
+      </div>
+      `
+      return;
+    }
     html += `
     <div class="event-box">
       <div class="date-box">${dateString}</div>
       <div class="time-box">${timeString}</div>
       <div class="address-box">${event.address}</div>
       <div class="hostname-box">Hosted by: ${host}</div>
+      <div>
+        <button class='event__button' id='${event.id}'>CANCEL MY EVENT!</button>
+      </div>
     </div>
     `
   })
@@ -99,3 +117,27 @@ const populateContainers = async () => {
 }
 
 populateContainers();
+
+//TODO WIP
+
+
+
+document.addEventListener('click', async (e) => {
+  if (e.target.classList.contains('event__button')) {
+    const eventId = e.target.id
+    const user = getUser()
+    if (!user) {
+      window.location.href = '/signup'
+      return;
+    }
+    const userId = user.data.id
+    const body = { eventId, userId }
+    const res = await fetch('/api/rsvps/', {
+      method: "DELETE",
+      body: JSON.stringify(body),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+    window.location.href = '/dashboard'
+}})

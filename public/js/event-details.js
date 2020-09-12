@@ -120,7 +120,7 @@ document.addEventListener('click', async (e) => {
         // determine if user is attending event
         const data = await fetch(`/api/events/${eventId}`);
         const {event} = await data.json();
-        console.log(event);
+        // console.log(event);
         const attendees = event.Users.map(el =>el.Rsvp.userId);
 
         // if not, rsvp them
