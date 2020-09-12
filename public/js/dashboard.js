@@ -74,7 +74,7 @@ const populate = (events, container) => {
       <div class="address-box">${event.address}</div>
       <div class="hostname-box">Hosted by: ${host}</div>
       <div>
-        <button class='event__button' id='${event.id}'>CANCEL MY EVENT!</button>
+        <button class='hostEvent__button' id='${event.id}'>CANCEL MY EVENT!</button>
       </div>
     </div>
     `
@@ -121,7 +121,7 @@ populateContainers();
 //TODO WIP
 
 
-
+//cancel rsvp
 document.addEventListener('click', async (e) => {
   if (e.target.classList.contains('event__button')) {
     const eventId = e.target.id
@@ -138,6 +138,22 @@ document.addEventListener('click', async (e) => {
       headers: {
         "Content-Type": "application/json"
       }
+    });
+    window.location.href = '/dashboard'
+}})
+
+//cancel event
+document.addEventListener('click', async (e) => {
+  if (e.target.classList.contains('hostEvent__button')) {
+    const eventId = e.target.id
+    const user = getUser()
+    if (!user) {
+      window.location.href = '/signup'
+      return;
+    }
+
+    const res = await fetch(`/api/events/${eventId}`, {
+      method: "DELETE"
     });
     window.location.href = '/dashboard'
 }})
