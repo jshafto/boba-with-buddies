@@ -503,7 +503,7 @@ div.boba-times {
   box-sizing: border-box;
   margin: 0 20px;
 }
-
+.hostEvent__button,
 .event__button {
   width: 100%;
   font-size: 20px;
@@ -517,6 +517,7 @@ div.boba-times {
 
 }
 
+.hostEvent__button:hover,
 .event__button:hover {
   background-color: #F7BF4D;
   color: white;
