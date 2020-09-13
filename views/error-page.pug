@@ -3,5 +3,10 @@ extends layout.pug
 block content
   div#parent
     include include/header.pug
-    h1 Sorry Bro, that page doesn’t exist!
+    div#error-page-wrapper
+      div#error-page
+        h1 UH OH 404
+        h2 Sorry buddy, looks like we don't have that page.
+        button#error-page-button
+          a(href='/') BACK TO HOMEPAGE
     include include/footer.pug
