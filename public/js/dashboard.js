@@ -36,7 +36,7 @@ const getUser = () => {
   return user;
 };
 
-const populate = (events, container) => {
+const populate = (events, container, hosted) => {
   let html = "";
   events.forEach(event => {
     const host = event.host.nickname;
@@ -53,7 +53,7 @@ const populate = (events, container) => {
     const userId = user.data.id
     const timeString = time.join(':')+ timeEnd;
 
-    if (userId !== event.host.id) {
+    if (!hosted) {
       html += `
       <div class="event-box">
         <div class="date-box">${dateString}</div>
@@ -65,21 +65,22 @@ const populate = (events, container) => {
         </div>
       </div>
       `
-      return;
-    }
-    html += `
-    <div class="event-box">
+    } else {
+      html += `
+      <div class="event-box">
       <div class="date-box">${dateString}</div>
       <div class="time-box">${timeString}</div>
       <div class="address-box">${event.address}</div>
       <div class="hostname-box">Hosted by: ${host}</div>
       <div>
-        <button class='hostEvent__button' id='${event.id}'>CANCEL MY EVENT!</button>
+      <button class='hostEvent__button' id='${event.id}'>CANCEL MY EVENT!</button>
       </div>
-    </div>
-    `
+      </div>
+      `
+    }
   })
   container.innerHTML = html;
+
 }
 
 const populateContainers = async () => {
@@ -91,8 +92,9 @@ const populateContainers = async () => {
     let res = await fetch(`/api/users/${userId}/events`);
     const joinedEvents = await res.json();
     if (joinedEvents.length) {
-      populate(joinedEvents, joinedContainer);
+      populate(joinedEvents, joinedContainer, false);
     } else {
+      populate(joinedEvents, joinedContainer, false);
       document.querySelector('.headline-joined')
         .innerHTML = "You have no boba times coming up! Let's change that."
     }
@@ -100,8 +102,9 @@ const populateContainers = async () => {
     res = await fetch(`/api/users/${userId}/hosted`);
     const hostedEvents = await res.json();
     if (hostedEvents.length) {
-      populate(hostedEvents, hostedContainer);
+      populate(hostedEvents, hostedContainer, true);
     } else {
+      populate(hostedEvents, hostedContainer, true);
       document.querySelector('.headline-hosted')
         .innerHTML = "You're not hosting any boba times! Let's change that."
     }
