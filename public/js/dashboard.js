@@ -155,5 +155,7 @@ document.addEventListener('click', async (e) => {
     const res = await fetch(`/api/events/${eventId}`, {
       method: "DELETE"
     });
+
     populateContainers();
+
 }})
