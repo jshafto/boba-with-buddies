@@ -10,7 +10,7 @@ const createCityLi = async (city) => {
     const res = await fetch(`/api/cities/${city.id}`)
     const cityDetails = await res.json()
     return `
-<button class="cityButton" id="${city.id}">
+<button class="cityButton ${city.name}" id="${city.id}">
                     ${city.name}
                 </button>`;
     }

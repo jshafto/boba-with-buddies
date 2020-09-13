@@ -52,12 +52,27 @@ function initMap() {
             scaledSize: new google.maps.Size(64, 64),
             map: map,
             title: city.location,
-            animation: google.maps.Animation.DROP
+            animation: google.maps.Animation.DROP,
+            city
         });
-        marker.addListener('click', function () {
+        console.log(marker.city)
+        marker.addListener('click', function (e) {
+            const location = marker.city.location
+            const button = document.querySelector(`.${location}`)
+            console.log(location)
+                // console.log(button.innerHTML)
             map.setZoom(10);
             map.setCenter(marker.getPosition());
         });
-
+        
+        
     });
+}
+
+
+
+function getCities(){
+    const citiesObj = await fetch('/api/cities')
+    const cities = await citiesObj.json()
+    return cities
 }

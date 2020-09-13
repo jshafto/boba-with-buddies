@@ -606,6 +606,10 @@ div#body-container {
 
 }
 
+.events__header {
+  padding-top: 40px;
+  font-size: 40px;
+}
 .events__container {
   display: flex;
   flex-direction: column;
