@@ -72,18 +72,18 @@ const populateEventsList = async () => {
     let buttonText;
     const attendees = event.Users.map(el =>el.Rsvp.userId);
     if (!attendees.includes(userId)) {
-        buttonText = `<button class='event__button' id='${event.id}'>SIGN ME UP</button>`
+        buttonText = `<button class='event__button-big' id='${event.id}'>SIGN ME UP</button>`
     } else {
-        buttonText = `<button class='event__button' id='${event.id}'>CANCEL MY RSVP</button>`
+        buttonText = `<button class='event__button-big' id='${event.id}'>CANCEL MY RSVP</button>`
     }
 
     const eventLi = `
         <div class="rsvp-container">
             <div class="event-header">
-                <div class="event-image">
-                    <img src="/public/images/coffee_6.png">
-                </div>
-                JOIN ${hostName} FOR BOBA
+            JOIN ${hostName} FOR BOBA
+            <div class="event-image">
+                <img src="/public/images/coffee_6.png">
+            </div>
             </div>
             <div class="event-body">
                 <p> &#128197: ${dateString}</p>
@@ -92,12 +92,10 @@ const populateEventsList = async () => {
                 <p> &#128506: ${event.City.name}</p>
                 <p> &#128483: <a href="${url}">${url}</a></p>
             </div>
-            <div class="event-footer">
-                BOBA-BUDDIES CURRENTLY ATTENDING: ${numAttendees}
-            </div>
-            <div>
-                ${buttonText}
-            </div>
+            <div class="event-footer">BOBA-BUDDIES CURRENTLY ATTENDING: ${numAttendees}</div>
+        </div>
+        <div>
+            ${buttonText}
         </div>
     `;
     eventsList.innerHTML = eventLi;
@@ -108,7 +106,7 @@ populateEventsList();
 
 
 document.addEventListener('click', async (e) => {
-    if(e.target.classList.contains('event__button')){
+    if(e.target.classList.contains('event__button-big')){
         const eventId = e.target.id
         const user = getUser()
         if (!user) {

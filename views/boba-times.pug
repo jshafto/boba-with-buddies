@@ -1,14 +1,15 @@
-
 extends layout.pug
 append head
-    //- link(rel="stylesheet" href="/public/css/map.css")
-    //- link(rel="stylesheet" href="/public/css/boba-times.css")
     script(defer src='/public/js/cities.js' type='module')
     script(defer src="/public/js/mapFeature.js")
     script(defer src=`https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`)
 block content
     div#parent
         include include/header.pug
+        .over-boba-times__wrapper
+            .over-boba-times__text
+                h1 GOOD BUBBLE TEA
+                h2 AND GOOD PEOPLE TO GO WITH IT.
         div#body-container
             div#body
                 h1(class="upcoming-boba-times-h1") Upcoming Boba Times
