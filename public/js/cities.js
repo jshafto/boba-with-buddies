@@ -43,9 +43,6 @@ document.addEventListener('click', async (e) => {
             .querySelector('.events')
             .innerHTML = html;   
     }
-    // put these into the html
-    // add event listeners to all the buttons that we created
-
 
 })
 
@@ -82,3 +79,5 @@ function getEventsHTML(city){
     return html;
     
 }   
+
+

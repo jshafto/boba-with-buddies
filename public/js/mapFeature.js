@@ -1,4 +1,5 @@
 
+
 var map;
 var locations = [
     {
@@ -12,7 +13,7 @@ var locations = [
         longitude: -79.9959
     },
     {
-        location: 'San Franciso',
+        location: 'San Francisco',
         latitude: 37.7749,
         longitude: -122.4194
     },
@@ -57,22 +58,16 @@ function initMap() {
         });
         console.log(marker.city)
         marker.addListener('click', function (e) {
-            const location = marker.city.location
-            const button = document.querySelector(`.${location}`)
+            let location = marker.city.location
+            if(location === 'San Francisco'){
+                location = 'San'
+            }
             console.log(location)
-                // console.log(button.innerHTML)
+            const mapCity = document.querySelector(`.${location}`)
+            mapCity.click()
             map.setZoom(10);
             map.setCenter(marker.getPosition());
         });
-        
-        
     });
 }
 
-
-
-function getCities(){
-    const citiesObj = await fetch('/api/cities')
-    const cities = await citiesObj.json()
-    return cities
-}
