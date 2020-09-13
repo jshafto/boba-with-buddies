@@ -1,9 +1,5 @@
-// import { disableFormButton } from './utils/auth.js';
-
 const form = document.querySelector('#signup-form');
 const errorsContainer = document.querySelector("#errors-container");
-
-// disableFormButton("#signup-form input", "#signup-form button");
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();

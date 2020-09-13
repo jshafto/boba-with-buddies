@@ -1,8 +1,5 @@
-// import { disableFormButton } from "./utils/auth.js";
 
 const form = document.querySelector('#login__form--signin');
-
-// disableFormButton('#signin-form input', '#signin-form button');
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -34,7 +31,7 @@ form.addEventListener('submit', async (e) => {
 
 });
 
-//! NOTE --- this is demo form submission
+// NOTE --- this is demo form submission
 const formDemo = document.querySelector('#login__form--demo');
 
 // disableFormButton('#signin-form input', '#signin-form button');

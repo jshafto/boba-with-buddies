@@ -134,7 +134,7 @@ button#signup {
 
 .over-boba-times__wrapper {
   background-image: url('../images/events-page.png');
-  background-position: 0% 30%;
+  background-position: center 30%;
   height: 300px;
   color: white;
   display: flex;
@@ -631,6 +631,7 @@ div.boba-times {
 
 .upcoming-boba-times-h1 {
   padding-top: 40px;
+  padding-bottom: 20px;;
 }
 
 
