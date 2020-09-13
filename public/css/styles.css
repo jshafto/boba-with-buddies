@@ -401,6 +401,7 @@ div#body-container {
   width: 80%;
   display: flex;
   justify-content: space-between;
+  min-height: 300px;
 
 
 }
@@ -554,8 +555,8 @@ div.boba-times {
 
 
 #map {
-  width: 80%;
-  height: 250px;
+  width: 900px;
+  height: 300px;
 }
 
 
