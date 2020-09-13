@@ -67,7 +67,7 @@ const populateEventsList = async () => {
     const numAttendees = event.Users.length;
 
     const user = getUser();
-    const userId = user.data.id
+    const userId = user ?  user.data.id : null;
 
     let buttonText;
     const attendees = event.Users.map(el =>el.Rsvp.userId);
