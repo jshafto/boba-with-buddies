@@ -1,0 +1,34 @@
+extends layout.pug
+
+append head
+    script(src="/public/js/account-details.js" type="module" defer)
+    link(rel="stylesheet", href="/public/css/account-details.css")
+
+block content
+  div#parent
+    include include/header.pug
+    div.nav-container
+        div.nav
+            div.nav-text
+                text QUICK LOOK
+                text HISTORY
+                a(href="/account-details") ACCOUNT DETAILS
+
+    div#body-container
+        div.center-container
+            h1 #{nickname}
+            h3 Email: #{email}
+            h3 Member Since: #{signUpDate}
+            h3 Account Type: Basic
+
+            div#form-container
+                form#passwordForm
+                    h1 Change Password
+                    label(for="currentPassword") Current Password
+                    input(type="text")
+                    label(for="newPassword") New Password
+                    input(type="text")
+                    label(for="confirmPassword") Confirm Password
+                    input(type="text")
+
+    include include/footer.pug
