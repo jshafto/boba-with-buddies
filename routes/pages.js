@@ -46,6 +46,9 @@ router.get('/boba-times/:id(\\d+)', csrfProtection, (req, res) => {
     res.render('events', { title: 'Boba with Buddies' });
 })
 
+router.get('/new-event', csrfProtection,(req, res) => {
+    res.render('create-event', {csrf: req.csrfToken()})
+})
 
 // '/dashboard' route
 // redirects to the signin page if user isn't signed in
@@ -66,6 +69,15 @@ router.get('/hosting', csrfProtection, (req, res) => {
     res.render('hosting', { csrf: req.csrfToken(), id: req.user.id});
 });
 
+router.get('/account-details', (req, res) => {
+    const signUpInfo = req.user.createdAt.toString().split(" ")
+    const signUpDate = `${signUpInfo[1]} ${signUpInfo[2]}, ${signUpInfo[3]}`
+    res.render('account-details', {
+        nickname: req.user.nickname,
+        email: req.user.emailAddress,
+        signUpDate: signUpDate
+     })
+})
 
 // '*' route
 // this will render an error page if the user requests a page
