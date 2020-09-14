@@ -425,6 +425,7 @@ a.link-to-other-form{
 div.nav-container {
   background-color: bisque;
   margin-bottom: 50px;
+
 }
 
 div.nav {
@@ -442,14 +443,30 @@ div.nav-text {
 
 }
 
-div.nav-text > text {
+div.nav-text > text,
+div.nav-text > a  {
   padding-right: 10px;
   padding-left: 0px;
   font-weight: bold;
   margin-left: auto;
 }
+#password-form {
+  text-align: center;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #faf6e8;
+  max-width: 650px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: flex-start;
+}
 
-button#boba-time-signup {
+
+
+
+#boba-time-signup {
   background-color: #EF6236;
   border: 2px solid #EF6236;
   border-radius: 10px;
@@ -464,27 +481,37 @@ button#boba-time-signup {
   width: 220px;
 }
 
+
+div#body-container-details {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  min-height: 300px;
+}
+
 div#body-container {
   margin: 0 auto;
   width: 80%;
   display: flex;
   justify-content: space-between;
   min-height: 300px;
-
-
 }
 
-
+div#body-container-details h1,
 div#body-container h1 {
   font-size: 1.5em;
   font-weight: bold;
   color: #EF6236;
   margin-bottom: 18px;
 }
-
+div#body-container-details h2,
 div#body-container h2 {
   font-size: 1em;
   font-weight: bold;
+}
+
+div#body-container-details h3 {
+  text-align: left;
 }
 
 div.boba-times {
@@ -858,7 +885,8 @@ div#footer-ethos {
 
 
 @media (max-width:550px) {
-  #parent div#body-container {
+  #parent div#body-container,
+  #parent div#body-container-details {
     width:100%;
     display: flex;
     flex-direction: column;
