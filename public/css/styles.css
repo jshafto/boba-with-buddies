@@ -460,7 +460,6 @@ div.nav-text > a  {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  align-self: flex-start;
 }
 
 
@@ -512,12 +511,22 @@ div#body-container h2 {
 
 div#body-container-details h3 {
   text-align: left;
+  padding-left: 3
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.center-container>#form-container {
+  align-items: flex-start;
 }
 
 div.boba-times {
   width: 100%;
   display: flex;
-
 
 }
 
