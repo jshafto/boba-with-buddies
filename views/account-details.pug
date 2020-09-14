@@ -10,16 +10,22 @@ block content
     div.nav-container
         div.nav
             div.nav-text
-                text QUICK LOOK
+                a(href="/dashboard") QUICK LOOK
                 text HISTORY
                 a(href="/account-details") ACCOUNT DETAILS
 
-    div#body-container
+    div#body-container-details
+        div.left-container
+            h1 Welcome home, #{nickname}!
+            h2 What are you looking forward to today?
+            a(href="/boba-times")
+                button#boba-time-signup SIGN UP FOR A BOBA TIME
         div.center-container
-            h1 #{nickname}
-            h3 Email: #{email}
-            h3 Member Since: #{signUpDate}
-            h3 Account Type: Basic
+            div.account-details
+                h1 #{nickname}
+                h3 Email: #{email}
+                h3 Member Since: #{signUpDate}
+                h3 Account Type: Basic
 
             div#form-container
                 form#passwordForm

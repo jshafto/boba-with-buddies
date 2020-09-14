@@ -3,7 +3,6 @@ extends layout.pug
 append head
     script(src="/public/js/dashboard.js" type="module" defer)
     link(rel="stylesheet", href="/public/css/account-details.css")
-    //- link(rel="stylesheet" href="/public/css/dashboard.css")
 
 block content
   div#parent
@@ -11,7 +10,7 @@ block content
     div.nav-container
         div.nav
             div.nav-text
-                text QUICK LOOK
+                a(href="/dashboard") QUICK LOOK
                 text HISTORY
                 a(href="/account-details") ACCOUNT DETAILS
     div#body-container

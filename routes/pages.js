@@ -46,10 +46,6 @@ router.get('/boba-times/:id(\\d+)', csrfProtection, (req, res) => {
     res.render('events', { title: 'Boba with Buddies' });
 })
 
-router.get('/new-event', csrfProtection,(req, res) => {
-    res.render('create-event', {csrf: req.csrfToken()})
-})
-
 // '/dashboard' route
 // redirects to the signin page if user isn't signed in
 router.get('/dashboard', csrfProtection, (req, res) => {

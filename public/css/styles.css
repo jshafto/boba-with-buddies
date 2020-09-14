@@ -131,6 +131,38 @@ button#signup {
 
 }
 
+
+.over-boba-times__wrapper {
+  background-image: url('../images/events-page.png');
+  background-position: center 30%;
+  height: 300px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+
+.over-boba-times__text {
+  text-align: center;
+  margin: 0 auto;
+  width: 500px;
+
+
+}
+
+.over-boba-times__text>h1 {
+  font-weight: bold;
+  font-size: 40px;
+  padding-top: 50px;
+  margin-bottom: 16px;
+}
+
+#over-boba-times__text>h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+
+}
+
 button#error-page-button {
   background-color: #EF6236;
   border-radius: 10px;
@@ -203,18 +235,13 @@ div#body-question {
   line-height: 1.25;
   font-weight: 600;
   padding-top: 40px;
-  margin-bottom: 40px;
+
 }
 
 div#body {
   width: 100%;
   display:flex;
   flex-direction: column;
-  text-align: center;
-  /* padding-bottom: 36px;
-  padding-left: 25%;
-  padding-right: 25%; */
-  /* height: 1500px; */
   justify-content: space-around;
   align-items: center;
 }
@@ -232,18 +259,14 @@ div.body-part {
 
 
 div.body-part > img {
-  /* float: left; */
   height: 312.52px;
   width: 336.36px;
-  /* margin-bottom: 50px; */
   border-radius: 20px;
 }
 
 div.body-text {
   display: flex;
-  /* margin-bottom: 10px; */
   flex-direction: column;
-  /* padding-top: 5%; */
   width: 400px;
 }
 
@@ -256,11 +279,10 @@ div.body-heading {
 
 text.body-heading {
   padding: 10px;
-  color: rgba(41, 41, 41, 1);
+  color:  #EF6236;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.25;
-  color: #4a3520;
 }
 
 text.body-subheading {
@@ -403,6 +425,7 @@ a.link-to-other-form{
 div.nav-container {
   background-color: bisque;
   margin-bottom: 50px;
+
 }
 
 div.nav {
@@ -420,14 +443,29 @@ div.nav-text {
 
 }
 
-div.nav-text > text {
+div.nav-text > text,
+div.nav-text > a  {
   padding-right: 10px;
   padding-left: 0px;
   font-weight: bold;
   margin-left: auto;
 }
+#password-form {
+  text-align: center;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #faf6e8;
+  max-width: 650px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-button#boba-time-signup {
+
+
+
+#boba-time-signup {
   background-color: #EF6236;
   border: 2px solid #EF6236;
   border-radius: 10px;
@@ -442,33 +480,53 @@ button#boba-time-signup {
   width: 220px;
 }
 
+
+div#body-container-details {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  min-height: 300px;
+}
+
 div#body-container {
   margin: 0 auto;
   width: 80%;
   display: flex;
   justify-content: space-between;
   min-height: 300px;
-
-
 }
 
-
+div#body-container-details h1,
 div#body-container h1 {
   font-size: 1.5em;
   font-weight: bold;
   color: #EF6236;
   margin-bottom: 18px;
 }
-
+div#body-container-details h2,
 div#body-container h2 {
   font-size: 1em;
   font-weight: bold;
 }
 
+div#body-container-details h3 {
+  text-align: left;
+  padding-left: 3
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.center-container>#form-container {
+  align-items: flex-start;
+}
+
 div.boba-times {
   width: 100%;
   display: flex;
-
 
 }
 
@@ -608,7 +666,8 @@ div.boba-times {
 
 
 .upcoming-boba-times-h1 {
-  margin-top: 20px;
+  padding-top: 40px;
+  padding-bottom: 20px;;
 }
 
 
@@ -658,6 +717,7 @@ div#body-container {
 .events__header {
   padding-top: 40px;
   font-size: 40px;
+  text-align: center;
 }
 .events__container {
   display: flex;
@@ -686,15 +746,38 @@ div#body-container {
   margin-top: 20px;
   margin-bottom: 20px;
   display:flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .rsvp-container {
-
+padding: 25px;
   width: 400px;
   background-color: #FEFEFE;
   border: 1px solid lightgray;
+}
+
+.event__button-big {
+  margin-top: 20px;
+  background-color: #EF6236;
+  border-radius: 10px;
+  color: #FEFEFE;
+  font-weight: bold;
+  font-size: 18px;
+  padding: .5em 1.5em;
+  letter-spacing: 2px;
+  line-height: 5px;
+  height: 50px;
+  width: 400px;
+  text-align: center;
+}
+
+.event-footer {
+  font-size: 1.2em;
+  margin-top: 10px;
+  text-align: center;
+  width:100%
 }
 
 
@@ -757,9 +840,7 @@ div#footer-ethos {
   div.body-part > img {
     order:-1
   }
-  div.slogan-container {
-    display: none;
-  }
+
   .wrapper-nav > a {
     display: none;
   }
@@ -813,7 +894,8 @@ div#footer-ethos {
 
 
 @media (max-width:550px) {
-  #parent div#body-container {
+  #parent div#body-container,
+  #parent div#body-container-details {
     width:100%;
     display: flex;
     flex-direction: column;
@@ -833,4 +915,24 @@ div#footer-ethos {
     width: 250px;
     margin: 0 auto;
   }
+
+  div.slogan-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: auto;
+  }
+  div.slogan-container > #slogan {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  #slogan > div.qualities {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
 }
